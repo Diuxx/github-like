@@ -35,20 +35,13 @@ Projet final de web full stack
 
 ![Snippets model de données](https://github.com/Diuxx/github-like/blob/develop/diagramme.jpg)
 
-### Parcour utilisateur
-
-Les étapes pour installer votre programme....
+### Parcours utilisateur
 
 Dites ce qu'il faut faire...
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
-
-
 Ensuite vous pouvez montrer ce que vous obtenez au final...
 
-## Démarrage
-
-npm start front et back
+### Maquettes
 
 ## Developpé avec
 
@@ -63,4 +56,4 @@ npm start front et back
 
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
-* **Nicolas Marmot** _alias_ [@outout14](https://github.com/Diuxx)
+* **Nicolas Marmot** _alias_ [@Diuxx](https://github.com/Diuxx)

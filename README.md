@@ -35,7 +35,7 @@ Projet final de web full stack
 
 ![Snippets model de données](https://github.com/Diuxx/github-like/blob/develop/diagramme.jpg)
 
-### Installation
+### Parcour utilisateur
 
 Les étapes pour installer votre programme....
 
@@ -52,25 +52,15 @@ npm start front et back
 
 ## Developpé avec
 
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
-
-## Contributing
-
-Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example.org) pour savoir comment le faire.
+* [Angular](https://angular.io/) - Framework web (front-end)
+* [Node js](https://nodejs.org/en/) - JavaScript runtime
+* [Sqlite](https://www.sqlite.org/) - SGBD
+* [Sequelize](https://sequelize.org/) - ORM
+* [PrimeNg](https://primefaces.org/) - library composants
 
 ## Versions
-Listez les versions ici 
-_exemple :_
-**Dernière version stable :** 5.0
-**Dernière version :** 5.1
-Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
-_(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
+**Dernière version stable :** 1.0
 
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
 * **Nicolas Marmot** _alias_ [@outout14](https://github.com/Diuxx)
-
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
-
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_

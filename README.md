@@ -1,12 +1,19 @@
-# Titre du projet
+# Snippets (github-like)
 
 [![forthebadge](https://forthebadge.com/images/badges/winter-is-coming.svg)](https://forthebadge.com)
 
-Snippet est un site internet permettant de stocker du code que l'on souhaite réutiliser plus tard.
+Snippets est un site internet permettant de stocker du code que l'on souhaite réutiliser plus tard.
 
-## Pour commencer
+Projet final de web full stack
 
-Positionnez vous dans les répertoires /back et /front puis faite un npm start.
+## Uses cases
+
+| nb        | case      |
+| 0  	| En tant qu'utilisateur, je souhaite pouvoir créer un compte sur le site 	|
+| 1 	| En tant qu'utilisateur, je souhaite voir les snippets des personnes enregistrées sur le site 	|
+| 2  	| En tant qu'utilisateur, je souhaite pouvoir rechercher un snippet en particulié par nom créateur, date de création ou par langage utilisé 	|
+| 3 	| En tant qu'utilisateur, je doit pouvoir télécharger un snippet 	|
+| 4  	| En tant qu'utilisateur, je doit pouvoir télécharger un fichier présent dans un snippet 	|
 
 ### Pré-requis
 

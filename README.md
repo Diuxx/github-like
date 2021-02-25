@@ -9,6 +9,7 @@ Projet final de web full stack
 ## Uses cases
 
 | nb        | case      |
+| ------|-----|
 | 0  	| En tant qu'utilisateur, je souhaite pouvoir créer un compte sur le site 	|
 | 1 	| En tant qu'utilisateur, je souhaite voir les snippets des personnes enregistrées sur le site 	|
 | 2  	| En tant qu'utilisateur, je souhaite pouvoir rechercher un snippet en particulié par nom créateur, date de création ou par langage utilisé 	|

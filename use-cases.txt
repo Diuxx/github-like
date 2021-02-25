@@ -1,0 +1,23 @@
+- Se connecter
+- S'inscrire
+
+- créer un snippets [répertoire]
+- ajouter une description à votre snippet
+- ajouter un titre à votre snippet
+
+- ajouter un fichier à votre snippet
+- nommer un fichier existant dans votre snippet
+- s'électionner le langage de programmation fichier
+- ecrire du code dans un fichier
+
+- mettre à jour votre snippet
+(bonus): commenter les snippets des autres personnes
+- télécharger un snippets (zip)
+- télécharger un fichier d'un snippets
+
+- rechercher un snippets pas nom / langages utilisé / nom d'utilisateur / date de création
+- supprimer un snippet que j'ai créé
+
+- package utiles
+
+taskkill /F /IM node.exe

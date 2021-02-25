@@ -33,7 +33,7 @@ Projet final de web full stack
 
 ### Model de donnée
 
-![Snippets model de données](https://github.com/Diuxx/github-like/blob/develop/diagramme.png)
+![Snippets model de données](https://github.com/Diuxx/github-like/blob/develop/diagramme.jpg)
 
 ### Installation
 

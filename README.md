@@ -41,16 +41,18 @@ Projet final de web full stack
 
 ### Couleurs
 
-background: #36393f
-backgroundx2: #2f3136
-backgroundx3: #202225
-input background: #313339
-input border: #222428
-hover input border: #040405
-text p: #8e9297
-text h12345: white
-button validate: #82E0AA
-button delete: #EC7063
+| zone        | color      |
+| ------|-----|
+| background | #36393f
+| backgroundx2 | #2f3136 |
+| backgroundx3 | #202225 |
+| input background | #313339 |
+| input border | #222428 |
+| hover input border | #040405 |
+| text p | #8e9297 |
+| text h12345 | white |
+| button validate | #82E0AA |
+| button delete | #EC7063 |
 
 ### Maquettes
 

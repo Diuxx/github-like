@@ -39,7 +39,22 @@ Projet final de web full stack
 
 ![User journey](https://github.com/Diuxx/github-like/blob/develop/user-journey.png)
 
+### Couleurs
+
+background: #36393f
+backgroundx2: #2f3136
+backgroundx3: #202225
+input background: #313339
+input border: #222428
+hover input border: #040405
+text p: #8e9297
+text h12345: white
+button validate: #82E0AA
+button delete: #EC7063
+
 ### Maquettes
+
+![Home](https://github.com/Diuxx/github-like/blob/develop/maquettes/snippet-home-registered.png)
 
 ## Developpé avec
 

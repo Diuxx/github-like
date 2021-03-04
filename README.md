@@ -60,7 +60,8 @@ Projet final de web full stack
 
 ![Edit](https://github.com/Diuxx/github-like/blob/develop/maquettes/see-snippets.png)  
     
-les autres maquettes : https://github.com/Diuxx/github-like/tree/develop/maquettes  
+les autres maquettes : https://github.com/Diuxx/github-like/tree/develop/maquettes   
+(+) https://www.figma.com/file/cSBrX3EMysekVMo7K8Gjiu/Snippets?node-id=125%3A1  
 
 ## Developpé avec
 

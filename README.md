@@ -57,6 +57,8 @@ Projet final de web full stack
 ### Maquettes
 
 ![Home](https://github.com/Diuxx/github-like/blob/develop/maquettes/snippet-home-registered.png)  
+
+![Edit](https://github.com/Diuxx/github-like/blob/develop/maquettes/see-snippets.png)  
     
 les autres maquettes : https://github.com/Diuxx/github-like/tree/develop/maquettes  
 

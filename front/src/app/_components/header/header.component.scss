@@ -1,0 +1,70 @@
+@import '../../../assets/app-theme.scss';
+
+#header {
+    min-height: $header-height;
+    padding: 3px;
+    box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    padding-bottom: 1.5px;
+    z-index: 10;
+}
+
+@media screen and (max-width: 480px) {
+    #header {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    #header .right {
+        display: flex;
+        width: fit-content;
+        justify-content: center !important;
+    }
+}
+
+#header .right {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#header .left {
+    justify-content: flex-end;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    a {
+        display: flex;
+        align-items: center;
+        min-height: 30px;
+        font-weight: bold;
+        gap: 5px;
+        color: $text-color;
+        cursor: pointer;
+        user-select: none;
+        border-bottom: none;
+        i {
+            font-size: 1.1rem;
+        }
+    }
+    a:hover {
+        color: $text-hover-color;
+    }
+}
+
+.input-search input {
+    width: 250px;
+    height: 30px;
+    font-size: 14px;
+}
+
+// dialog
+:host ::ng-deep .p-dialog-top-right .p-dialog {
+    margin-top: 4rem;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+    padding-bottom: 1rem;
+}

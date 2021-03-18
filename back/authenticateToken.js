@@ -7,22 +7,26 @@ admin.initializeApp({
 
 async function decodeIDToken(req, res, next) {
     const header = req.headers.authorization;
-    if (req.headers.authorization != undefined) {
-        if (header != 'Bearer null' && req.headers.authorization.startsWith('Bearer ')) {
 
-            const idToken = req.headers.authorization.split('Bearer ')[1];
-    
-            try {
-                const decodedToken = await admin.auth().verifyIdToken(idToken);
-                req['currentUser'] = decodeIDToken;
-            } catch (e) {
-                console.log(err);
+    if (process.env.CHECK_AUTH == "no")
+    {
+        req['currentUser'] = true;
+    } 
+    else {
+        if (req.headers.authorization != undefined) {
+            if (header != 'Bearer null' && req.headers.authorization.startsWith('Bearer ')) {
+                const idToken = req.headers.authorization.split('Bearer ')[1];
+                try {
+                    const decodedToken = await admin.auth().verifyIdToken(idToken);
+                    req['currentUser'] = decodeIDToken;
+                } catch (e) {
+                    console.log(err);
+                }
             }
+        } else {
+            req['currentUser'] = null; 
         }
-    } else {
-        req['currentUser'] = null; 
     }
-
     next();
 }
 

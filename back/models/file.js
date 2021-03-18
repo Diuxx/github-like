@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING, 
             allowNull: false
         },
-        LangageId: {
+        LanguageId: {
             type: DataTypes.STRING
         }
     }, {
@@ -37,8 +37,8 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: 'CASCADE',
             foreignKey: 'SnippetId'
         });
-        models.files.belongsTo(models.langages, {
-            foreignKey: 'LangageId'
+        models.files.belongsTo(models.languages, {
+            foreignKey: 'LanguageId'
         });
     };
 

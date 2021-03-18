@@ -7,11 +7,11 @@ var app = express();
 // socket io
 const io = require('./io')(app);
 
-// routing
-require('./routes/routing')(app);
-
 // middleware
 require('./middleware')(app);
+
+// routing
+require('./routes/routing')(app);
 
 // error handler
 require('./error-handler')(app);

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    const Langage = sequelize.define('langage', {
+    const Language = sequelize.define('language', {
         Id: {
             type: DataTypes.STRING,
             primaryKey: true,
@@ -11,23 +11,23 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(64),
             allowNull: false
         },
-        Extention: {
+        Extension: {
             type: DataTypes.STRING(16),
             allowNull: false
         },
         Icon: DataTypes.STRING(255),
     },
     {
-        tableName: 'langages'
+        tableName: 'languages'
     });
 
     // Add table associations
-    Langage.associate = (models) => {
+    Language.associate = (models) => {
         // hasMany Files
-        models.langages.hasMany(models.files, {
-            foreignKey: 'LangageId'
+        models.languages.hasMany(models.files, {
+            foreignKey: 'LanguageId'
         });
     };
 
-    return Langage;
+    return Language;
 };

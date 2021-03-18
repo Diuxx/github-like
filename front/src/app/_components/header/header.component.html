@@ -1,0 +1,45 @@
+
+<div id="header" class="p-grid">
+  <!-- header content -->
+  <div class="p-grid p-col right">
+    <span class="logo">SNI<span>PP</span>ET</span>
+
+    <!-- right header content -->
+    <span class="p-input-icon-left input-search">
+      <i class="pi pi-search"></i>
+      <input #search (focus)="searchFocus()" class="input-sm" type="text" pInputText />
+    </span>
+  </div>
+
+  <div class="p-grid p-col left">
+    <!-- left header content -->
+    <div class="login-buttons">
+      <a (click)="showSignInDialog()">Log in<i class="pi pi-key"></i></a>
+      <a (click)="showSignUpDialog()">Register<i class="pi pi-id-card"></i></a>
+    </div>
+  </div>
+</div>
+
+<p-overlayPanel #op>
+  <ng-template pTemplate>
+    <button pButton pRipple type="button" label="Logout" (click)="authService.SignOut()"></button>
+  </ng-template>
+</p-overlayPanel>
+
+<p-dialog 
+  position="top-right"
+  [showHeader]="false"
+  [(visible)]="signInDisplay"
+  (clickOutside)="onClickOutsideSignInDialog($event)"
+  [draggable]="false">
+  <app-sign-in (displaySignUpEvent)="showSignUpDialog()" ></app-sign-in>
+</p-dialog>
+
+<p-dialog 
+  position="top-right"
+  [showHeader]="false"
+  [(visible)]="signUpDisplay"
+  (clickOutside)="onClickOutsideSignUpDialog($event)"
+  [draggable]="false">
+  <app-sign-up (displaySignInEvent)="showSignInDialog()"></app-sign-up>
+</p-dialog>

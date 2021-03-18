@@ -14,7 +14,7 @@ const tables = {};
 tables['users'] = require('./user')(db.sequelize, DataTypes);
 tables['snippets'] = require('./snippet')(db.sequelize, DataTypes);
 tables['files'] = require('./file')(db.sequelize, DataTypes);
-tables['langages'] = require('./langage')(db.sequelize, DataTypes);
+tables['languages'] = require('./language')(db.sequelize, DataTypes);
 tables['comments'] = require('./comment')(db.sequelize, DataTypes);
 
 Object.values(tables).forEach(table => {

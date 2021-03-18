@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/app-theme.scss';
+
+body {
+    font-family: Roboto, 'Open Sans', Arial, sans-serif;
+    margin: 0px;
+    font-size: 12px !important;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+.logo {
+    font-family: Cubicode;
+    font-size: 24px !important;
+    color: $text-color;
+    user-select: none;
+    cursor: auto;
+    span {
+        color: $red;
+    }
+}
+
+.p-grid {
+    margin: 0 !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.p-field {
+    display: flex;
+    flex-direction: column;
+}
+
+:host .p-inputtext:enabled:focus {
+    border-color:#ced4da !important; //to avoid border color change
+    box-shadow: none !important;
+}

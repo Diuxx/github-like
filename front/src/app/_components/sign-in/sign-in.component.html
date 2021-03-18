@@ -1,0 +1,37 @@
+<app-form [formGroup]="formCheckout">
+  <!-- Email field -->
+  <div class="p-field">
+    <label for="login">Login</label>
+    <input id="login" class="input-sm" type="username" formControlName="login" aria-describedby="login-help" pInputText />
+    <small *ngIf="getLogin()?.errors?.required && getLogin().touched" id="loginErr" class="p-error">Email address is required.</small>
+    <small *ngIf="getLogin()?.errors?.email && getLogin().touched" id="loginErr" class="p-error">Wrong email address format.</small>
+  </div>
+  
+  <!-- Password field -->
+  <div class="p-field">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" [feedback]="false" pPassword />
+    <small *ngIf="getPassword()?.errors?.required && getPassword().touched" id="loginErr" class="p-error">Password is required.</small>
+  </div>
+  <div *ngIf="getAuthService().hasLoginErr" class="p-field">
+    <small id="loginErr" class="p-error">{{ getAuthService().loginErr }}</small>
+  </div>
+  
+  <div class="p-field">
+    <p-checkbox label="Stay logged in" 
+      [(ngModel)]="stayLogged" 
+      [ngModelOptions]="{standalone: true}"
+      [binary]="true">
+    </p-checkbox>
+  </div>
+
+  <!-- Submit -->
+  <div class="p-field">
+    <button pButton pRipple type="button" [disabled]="!canSubmit()" label="Sign-in" class="p-button-raised t-b-blue" (click)="submit()"></button>
+  </div>
+
+  <div class="sign-up">
+    <small>Don't have account? <a role="button" (click)="displaySignUp()">Register now</a></small>
+  </div>
+</app-form>
+

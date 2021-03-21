@@ -1,0 +1,17 @@
+<div class="snippet-content">
+  <h2 class="title">{{ snippet?.Title }}</h2>
+  <div class="description">
+    {{ snippet?.Desc }}
+  </div>
+  <div class="footer">
+    <div class="languages">
+      <ng-container *ngFor="let language of snippet?.Languages">
+        <i class="{{ language.Icon }}" [style.color]="language.Color"></i>
+      </ng-container>
+    </div>
+    <div class="creator">
+      @{{ snippet?.User }}
+    </div>
+  </div>
+
+</div>

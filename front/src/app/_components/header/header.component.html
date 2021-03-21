@@ -2,7 +2,7 @@
 <div id="header" class="p-grid">
   <!-- header content -->
   <div class="p-grid p-col right">
-    <span class="logo">SNI<span>PP</span>ET</span>
+    <span class="logo" (click)="navigateHome()">SNI<span>PP</span>ET</span>
 
     <!-- right header content -->
     <span class="p-input-icon-left input-search">
@@ -11,11 +11,18 @@
     </span>
   </div>
 
+  <div class="p-grid p-col center" *ngIf="isAuth">
+    <a class="fas fa-folder-plus add-snippet" pTooltip="Create new snippet" tooltipPosition="bottom"></a>
+  </div>
+
   <div class="p-grid p-col left">
     <!-- left header content -->
-    <div class="login-buttons">
+    <div class="login-buttons" *ngIf="!isAuth">
       <a (click)="showSignInDialog()">Log in<i class="pi pi-key"></i></a>
       <a (click)="showSignUpDialog()">Register<i class="pi pi-id-card"></i></a>
+    </div>
+    <div class="navigation-buttons" *ngIf="isAuth">
+      <a class="fas fa-sign-out-alt" (click)="logout()" pTooltip="sign out"></a>
     </div>
   </div>
 </div>

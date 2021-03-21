@@ -9,9 +9,11 @@ import { AppInit } from 'src/app/_core/init/appInit';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_components/home/home.component';
 import { HeaderComponent } from './_components/header/header.component';
+import { SnippetListComponent } from './_components/snippet-list/Snippet-list.component';
 
 // template component
 import { FormComponent } from './_templates/form/form.component';
+import { SnippetComponent } from './_templates/snippet/snippet.component';
 
 // primeng component
 import { InputTextModule } from 'primeng/inputtext';
@@ -27,12 +29,14 @@ import { BadgeModule } from 'primeng/badge';
 import { EditorModule } from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
+// font awesome modules
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // external modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideModule } from 'ng-click-outside';
-
 
 // 1. Import the libs you need
 import { AngularFireModule } from '@angular/fire';
@@ -66,7 +70,9 @@ const config = {
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
-    FormComponent
+    FormComponent,
+    SnippetComponent,
+    SnippetListComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +85,7 @@ const config = {
     AngularFireStorageModule, // storage
     AppRoutingModule,
     FormsModule,
+    FontAwesomeModule,
     HttpClientModule,
     BrowserAnimationsModule,
     InputTextModule,
@@ -94,7 +101,8 @@ const config = {
     BadgeModule,
     EditorModule,
     FileUploadModule,
-    CheckboxModule
+    CheckboxModule,
+    ScrollPanelModule
   ],
   providers: [
     AppInit,

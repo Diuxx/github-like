@@ -7,12 +7,15 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             allowNull: false
         },
-        Repository: {
+        Title: {
             type: DataTypes.STRING(255),
             allowNull: false
         },
+        Repository: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         Desc: DataTypes.TEXT,
-        // belongsTo User
         UserId: {
             type: DataTypes.STRING, 
             allowNull: false
@@ -24,15 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     Snippet.associate = (models) => {
         models.snippets.belongsTo(models.users, { onDelete: 'CASCADE', foreignKey: 'UserId' });
         models.snippets.hasMany(models.files, { foreignKey: 'SnippetId' });
-        // models.snippets.hasMany(models.comments, { foreignKey: 'SnippetId' });
     };
-
-    // Snippet.associate = (models) => {
-    //     // hasMany Comments
-    //     models.snippets.hasMany(models.comments, {
-    //         foreignKey: 'SnippetId'
-    //     });
-    // };
 
     return Snippet;
 };

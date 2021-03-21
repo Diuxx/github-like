@@ -8,6 +8,8 @@ body {
     font-size: 12px !important;
     background-color: $background-color;
     color: $text-color;
+    height: 100vh; // need mobile adaptation
+    overflow-y: hidden; // need mobile adaptation
 }
 
 .logo {

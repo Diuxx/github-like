@@ -1,0 +1,174 @@
+[
+  {
+    "word": "Mon",
+    "count": 1
+  },
+  {
+    "word": "snippet",
+    "count": 1
+  },
+  {
+    "word": "de",
+    "count": 2
+  },
+  {
+    "word": "test",
+    "count": 1
+  },
+  {
+    "word": "Ceci",
+    "count": 1
+  },
+  {
+    "word": "est",
+    "count": 1
+  },
+  {
+    "word": "une",
+    "count": 1
+  },
+  {
+    "word": "description",
+    "count": 1
+  },
+  {
+    "word": "snippet..",
+    "count": 1
+  },
+  {
+    "word": ":)",
+    "count": 1
+  },
+  {
+    "word": "use",
+    "count": 1
+  },
+  {
+    "word": "strict",
+    "count": 1
+  },
+  {
+    "word": "moduleexports",
+    "count": 1
+  },
+  {
+    "word": "sequelize",
+    "count": 1
+  },
+  {
+    "word": "DataTypes",
+    "count": 1
+  },
+  {
+    "word": ">",
+    "count": 2
+  },
+  {
+    "word": "const",
+    "count": 1
+  },
+  {
+    "word": "Snippet",
+    "count": 2
+  },
+  {
+    "word": "sequelizedefinesnippet",
+    "count": 1
+  },
+  {
+    "word": "Id",
+    "count": 1
+  },
+  {
+    "word": "type",
+    "count": 3
+  },
+  {
+    "word": "DataTypesSTRING",
+    "count": 2
+  },
+  {
+    "word": "primaryKey",
+    "count": 1
+  },
+  {
+    "word": "true",
+    "count": 1
+  },
+  {
+    "word": "allowNull",
+    "count": 3
+  },
+  {
+    "word": "false",
+    "count": 3
+  },
+  {
+    "word": "Repository",
+    "count": 1
+  },
+  {
+    "word": "DataTypesSTRING255",
+    "count": 1
+  },
+  {
+    "word": "Desc",
+    "count": 1
+  },
+  {
+    "word": "DataTypesTEXT",
+    "count": 1
+  },
+  {
+    "word": "UserId",
+    "count": 2
+  },
+  {
+    "word": "tableName",
+    "count": 1
+  },
+  {
+    "word": "snippets",
+    "count": 1
+  },
+  {
+    "word": "Snippetassociate",
+    "count": 1
+  },
+  {
+    "word": "models",
+    "count": 1
+  },
+  {
+    "word": "modelssnippetsbelongsTomodelsusers",
+    "count": 1
+  },
+  {
+    "word": "onDelete",
+    "count": 1
+  },
+  {
+    "word": "CASCADE",
+    "count": 1
+  },
+  {
+    "word": "foreignKey",
+    "count": 2
+  },
+  {
+    "word": "modelssnippetshasManymodelsfiles",
+    "count": 1
+  },
+  {
+    "word": "SnippetId",
+    "count": 1
+  },
+  {
+    "word": "return",
+    "count": 1
+  },
+  {
+    "word": "",
+    "count": 1
+  }
+]

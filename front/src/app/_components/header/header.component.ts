@@ -95,4 +95,12 @@ export class HeaderComponent implements OnInit {
     }
     this.signUpDisplay = false;
   }
+
+  public navigateHome() {
+    this.router.navigate(['/role']); 
+  }
+
+  public logout() {
+    this.authService.SignOut();
+  }
 }

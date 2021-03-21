@@ -27,37 +27,72 @@
     gap: 10px;
 }
 
+#header .center {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a {
+        font-size: 1.8em;
+        border: none;  
+    }
+}
+
+.add-snippet {
+    color: $add-snippet-link-color;
+    &:hover {
+        color: $add-snippet-link-hover-color;
+    }
+}
+
 #header .left {
     justify-content: flex-end;
 }
 
-.login-buttons {
+.login-buttons, 
+.navigation-buttons {
     display: flex;
+    align-items: center;
     justify-content: space-around;
     gap: 20px;
-    a {
-        display: flex;
-        align-items: center;
-        min-height: 30px;
-        font-weight: bold;
-        gap: 5px;
-        color: $text-color;
-        cursor: pointer;
-        user-select: none;
-        border-bottom: none;
-        i {
-            font-size: 1.1rem;
-        }
-    }
     a:hover {
         color: $text-hover-color;
     }
 }
 
+.navigation-buttons a {
+    font-size: 1.8em;
+    border: none;
+}
+
+.login-buttons a {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    font-weight: bold;
+    gap: 5px;
+    color: $text-color;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: none;
+    i {
+        font-size: 1.1rem;
+    }
+    &:hover {
+        color: $text-hover-color;
+    }
+}
+
 .input-search input {
-    width: 250px;
+    width: 200px;
     height: 30px;
     font-size: 14px;
+    transition: width 1s;
+}
+
+.input-search input:focus {
+    width: 250px;
+    transition: width 1s;
 }
 
 // dialog
@@ -67,4 +102,8 @@
 
 :host ::ng-deep .p-dialog .p-dialog-content {
     padding-bottom: 1rem;
+}
+
+.logo {
+    cursor: pointer;
 }

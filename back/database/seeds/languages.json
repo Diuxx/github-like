@@ -1,44 +1,51 @@
 [
     {
-      "Id": "uid-1e98ea92",
-      "Name": "HTML",
-      "Extension": "html",
-      "Icon": "fab fa-html5"
+        "Id": "uid-1e98ea92",
+        "Name": "HTML",
+        "Extension": "html",
+        "Icon": "fab fa-html5",
+        "Color": "#EC7063"
     },
     {
         "Id": "uid-8fda85d4",
         "Name": "CSS",
         "Extension": "css",
-        "Icon": "fab fa-css3-alt"
+        "Icon": "fab fa-css3-alt",
+        "Color": "#F8C9C4"
     },
     {
         "Id": "uid-fb62eedc",
         "Name": "JavaScript",
         "Extension": "js",
-        "Icon": "fab fa-js"
+        "Icon": "fab fa-js",
+        "Color": "#F7DC6F"
     },
     {
         "Id": "uid-6a31558d",
         "Name": "TypeScript",
         "Extension": "ts",
-        "Icon": "fab fa-js"
+        "Icon": "fab fa-js",
+        "Color": "#F7DC6F"
     },
     {
         "Id": "uid-2800dc15",
         "Name": "PHP",
         "Extension": "php",
-        "Icon": "fab fa-php"
+        "Icon": "fab fa-php",
+        "Color": "#85C1E9"
     },
     {
         "Id": "uid-1b20360c",
         "Name": "Java",
         "Extension": "java",
-        "Icon": "fab fa-java"
+        "Icon": "fab fa-java",
+        "Color": "#8E9297"
     },
     {
         "Id": "uid-450159d7",
         "Name": "Python",
         "Extension": "py",
-        "Icon": "fab fa-python"
+        "Icon": "fab fa-python",
+        "Color": "#45B39D"
     }
 ]

@@ -21,6 +21,17 @@ $form-background-color: $grey-400;
 $form-label-color: $grey;
 $form-text-color: $text-color;
 
+$snippet-list-background-color: $grey-700;
+$snippet-list-scroll-background-color: $grey-500;
+$snippet-list-hover-scroll-background-color: $grey-400;
+
+$snippet-info-background-color: $grey-500;
+$snippet-info-background-hover-color: $grey-400;
+$snippet-desc-background-color: $grey-700;
+
+$add-snippet-link-color: $green;
+$add-snippet-link-hover-color: $green-light;
+
 /* #region input */
 input {
     background-color: $input-background-color;

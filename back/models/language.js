@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         Icon: DataTypes.STRING(255),
+        Color: DataTypes.STRING(16)
     },
     {
         tableName: 'languages'

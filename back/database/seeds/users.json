@@ -1,12 +1,12 @@
 [
     {
       "Id": "uid-f10b1f96",
-      "GoogleId": "none",
+      "GoogleId": "uid-f10b1f96",
       "Name": "Nicolas Marmot"
     },
     {
       "Id": "uid-a75f08d7",
-      "GoogleId": "none",
+      "GoogleId": "uid-a75f08d7",
       "Name": "Jean Snippest"
     }
 ]

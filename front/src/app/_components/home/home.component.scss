@@ -1,2 +1,16 @@
 @import '../../../assets/color-config.scss';
 
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 100%;
+}
+
+.snippet {
+    display: flex;
+    width: fit-content;
+    border: 1px solid black;
+    width: calc((100% / 5) - 9px);// 330px;
+    height: 110px;
+}

@@ -6,7 +6,9 @@ const { DataTypes } = require('sequelize');
 
 // check db authenticate
 db.sequelize.authenticate()
-.then(() => console.log('INFO - Database connected.'))
+.then(() => {
+    console.log('INFO - Database connected.')
+})
 .catch(err => console.log('ERROR - Unable to connect to the database', err));
 
 // models
@@ -16,6 +18,8 @@ tables['snippets'] = require('./snippet')(db.sequelize, DataTypes);
 tables['files'] = require('./file')(db.sequelize, DataTypes);
 tables['languages'] = require('./language')(db.sequelize, DataTypes);
 tables['comments'] = require('./comment')(db.sequelize, DataTypes);
+tables['terms'] = require('./term')(db.sequelize, DataTypes);
+tables['occurrences'] = require('./occurrence')(db.sequelize, DataTypes);
 
 Object.values(tables).forEach(table => {
     if (table.associate) table.associate(tables);
@@ -24,9 +28,8 @@ Object.values(tables).forEach(table => {
 db.tables = tables; // assigne tables configuration to db
 
 // migrate tables
-require('../database/migration')(db);
-
-// seeding
-require('../database/seed')(db);
+require('../database/migration')(db).then(() => {
+    console.log('Toutes les tables ont été créées !');
+});
 
 module.exports = db;

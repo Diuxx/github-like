@@ -1,0 +1,56 @@
+@import '../../../assets/app-theme.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: calc(100% - 15px);
+    min-height: 98px;
+    background-color: $snippet-info-background-color;
+    cursor: pointer;
+}
+
+:host:hover {
+    background-color: $snippet-info-background-hover-color;
+}
+
+.title {
+    margin: 0;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.description {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+    background-color: $snippet-desc-background-color;
+    font-size: 0.7em;
+}
+
+.languages {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 50%;
+}
+
+.creator {
+    align-self: flex-start;
+    display: flex;
+    width: 50%;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: $red;
+    justify-content: flex-end;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+}

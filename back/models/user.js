@@ -17,17 +17,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     }, { 
-        tableName: 'users' 
+        tableName: 'users'
     });
 
     // list of all created models
     User.associate = (models) => {
-        models.users.hasMany(models.snippets, {
-            foreignKey: 'UserId'
-        });
-        models.users.hasMany(models.comments, {
-            foreignKey: 'UserId'
-        });
+        models.users.hasMany(models.snippets, { foreignKey: 'UserId' });
+        models.users.hasMany(models.comments, { foreignKey: 'UserId' });
     };
 
     return User;

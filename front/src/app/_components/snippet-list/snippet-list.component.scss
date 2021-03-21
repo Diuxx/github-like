@@ -1,0 +1,35 @@
+@import '../../../assets/app-theme.scss';
+
+$snippet-list-max-width: 330px;
+
+:host {
+    width: $snippet-list-max-width;
+    background-color: $snippet-list-background-color;
+}
+
+::ng-deep .content .p-scrollpanel {
+    height: calc(100vh - var(--header-height) - 5px);
+    width: 100%;
+}
+
+::ng-deep .content .p-scrollpanel-bar {
+    background-color: $snippet-list-scroll-background-color;
+    opacity: 1;
+    transition: background-color .2s;
+    &:hover {
+        background-color: $snippet-list-hover-scroll-background-color;
+    }
+}
+
+::ng-deep .p-scrollpanel-content {
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100% !important;
+    // padding: 0 5px 0 0 !important;
+}
+
+.snippet {
+    display: flex;
+}

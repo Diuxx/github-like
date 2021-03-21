@@ -1,0 +1,25 @@
+[
+    {
+      "Id": "uid-9731c478",
+      "Title": "Mon snippet de test",
+      "Description": "Ceci est une description de snippet.. :)",
+      "Repository": "public/snippets/uid-9731c478",
+      "UserId": "uid-f10b1f96",
+      "Files": [
+        {
+            "Id": "uid-97dfg478",
+            "Name": "main",
+            "FileName": "main",
+            "Url": "public/snippets/uid-9731c478/files/main.js",
+            "LanguageId": "uid-fb62eedc"
+        },
+        {
+          "Id": "uid-91234478",
+          "Name": "dashboard",
+          "FileName": "dashboard",
+          "Url": "public/snippets/uid-9731c478/files/dashboard.js",
+          "LanguageId": "uid-1e98ea92"
+        }
+      ]
+    }
+]

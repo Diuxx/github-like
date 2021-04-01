@@ -12,7 +12,7 @@
   </div>
 
   <div class="p-grid p-col center" *ngIf="isAuth">
-    <a class="fas fa-folder-plus add-snippet" pTooltip="Create new snippet" tooltipPosition="bottom"></a>
+    <a class="fas fa-folder-plus add-snippet" (click)="createNewSnippet()" pTooltip="Create new snippet" tooltipPosition="bottom"></a>
   </div>
 
   <div class="p-grid p-col left">
@@ -26,12 +26,6 @@
     </div>
   </div>
 </div>
-
-<p-overlayPanel #op>
-  <ng-template pTemplate>
-    <button pButton pRipple type="button" label="Logout" (click)="authService.SignOut()"></button>
-  </ng-template>
-</p-overlayPanel>
 
 <p-dialog 
   position="top-right"
@@ -49,4 +43,14 @@
   (clickOutside)="onClickOutsideSignUpDialog($event)"
   [draggable]="false">
   <app-sign-up (displaySignInEvent)="showSignInDialog()"></app-sign-up>
+</p-dialog>
+
+<p-dialog 
+  [showHeader]="false"
+  [showHeader]="false"
+  [(visible)]="snippetNewDisplay">
+  <app-snippet-new 
+    (canceled)="cancelSnippetCreation()"
+    (created)="snippetCreated($event)">
+  </app-snippet-new>
 </p-dialog>

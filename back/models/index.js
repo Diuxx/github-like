@@ -28,8 +28,8 @@ Object.values(tables).forEach(table => {
 db.tables = tables; // assigne tables configuration to db
 
 // migrate tables
-require('../database/migration')(db).then(() => {
-    console.log('Toutes les tables ont été créées !');
-});
+// require('../database/migration')(db).then(() => {
+//     console.log('Toutes les tables ont été créées !');
+// });
 
 module.exports = db;

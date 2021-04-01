@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { User } from 'src/app/shared/intefaces/User';
 import { AuthService } from 'src/app/shared/services/Auth.service';
+import { Snippet } from 'src/app/_models/snippet';
 
 @Component({
   selector: 'app-header',
@@ -14,10 +15,14 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('search') inputSearch: ElementRef;
 
+  // ouput variables
+  @Output() onSnippetCreated = new EventEmitter<Snippet>();
+
   // variables
   public isAuth: boolean;
   public signInDisplay: boolean = false;
   public signUpDisplay: boolean = false;
+  public snippetNewDisplay: boolean = false;
 
   public signInDisplayFirstClick : boolean = false;
   public signUpDisplayFirstClick : boolean = false;
@@ -53,7 +58,6 @@ export class HeaderComponent implements OnInit {
 
   /* display signIn dialog */
   public showSignInDialog(): void {
-
     if (this.isTabletSize())
     {
       this.router.navigate(['/sign-in']);
@@ -71,9 +75,16 @@ export class HeaderComponent implements OnInit {
     if(this.signInDisplay === true) {
       this.signInDisplay = false;
     }
-
     this.signUpDisplayFirstClick = true;
     this.signUpDisplay = true;
+  }
+
+  public createNewSnippet(): void {
+    this.snippetNewDisplay = true;
+  }
+
+  public cancelSnippetCreation(): void {
+    this.snippetNewDisplay = false;
   }
 
   public getUserData(): User {
@@ -94,6 +105,14 @@ export class HeaderComponent implements OnInit {
       return;
     }
     this.signUpDisplay = false;
+  }
+
+  public snippetCreated(s: Snippet) {
+    console.log(s);
+    if (this.onSnippetCreated.observers.length > 0)
+    {
+      this.onSnippetCreated.emit(s);
+    }
   }
 
   public navigateHome() {

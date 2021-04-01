@@ -1,0 +1,43 @@
+@import 'color-config.scss';
+
+::ng-deep .p-tree {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    color: $text-color;
+    font-size: 12px;
+}
+
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content {
+    border-radius: 20px;
+    padding: 0;
+}
+
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content:focus,
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler:focus {
+    box-shadow: none;
+}
+
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-treenode-selectable:not(.p-highlight):hover,
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler:enabled:hover {
+    background: $grey-300;
+    color: $text-color;
+}
+
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight {
+    background: $grey-300;
+    color: $text-color;
+}
+
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-tree-toggler,
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-treenode-icon,
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-tree-toggler:hover,
+::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-treenode-icon:hover
+{
+    color: inherit;
+}
+
+::ng-deep .p-tree-empty-message {
+    text-align: center;
+}

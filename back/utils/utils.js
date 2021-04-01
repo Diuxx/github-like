@@ -8,28 +8,29 @@ exports.calculateTf = async (snippet) => {
 
     var tf = []; // fichier json avec mot + nombre d'occurrences
 
-    let snippetInformations = `${snippet.Title} ${snippet.Description}`;
+    let snippetInformations = `${snippet.Title} ${snippet.Desc}`;
     let wordArray = snippetInformations.split(' ');
 
     addWords(wordArray, tf);
 
-    for (const file of snippet.Files) {
-        try {
-            const data = await fs.readFile(`${appRoot}/${file.Url}`, 'utf8');
-
-            let dataPunctuationLess = data.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\']/g, '');
-            let finalString = dataPunctuationLess.replace(/\s{2,}/g, ' ');
-            let wordArray = finalString.split(' ');
-
-            addWords(wordArray, tf);
-        } catch(err) {
-            console.log(err);
-            return false;
+    if (snippet.Files != null) {
+        for (const file of snippet.Files) {
+            try {
+                const data = await fs.readFile(`${appRoot}/${file.Url}`, 'utf8');
+    
+                let dataPunctuationLess = data.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\']/g, '');
+                let finalString = dataPunctuationLess.replace(/\s{2,}/g, ' ');
+                let wordArray = finalString.split(' ');
+    
+                addWords(wordArray, tf);
+            } catch(err) {
+                console.log(err);
+                return false;
+            }
         }
     }
-
-    try { // write file
-        // await fs.writeFile(`${appRoot}/${snippet.Repository}/tf.json`, JSON.stringify(tf));
+    try { 
+        // write file
         await jsonfile.writeFile(`${appRoot}/${snippet.Repository}/tf.json`, tf, { spaces: 2, EOL: '\r\n' });
     } catch(err) {
         console.log(err);
@@ -37,6 +38,19 @@ exports.calculateTf = async (snippet) => {
     }
     return true;
 };
+
+exports.isNullOrEmpty = (data) => {
+    return data == null || data == ''; 
+};
+
+exports.capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+exports.sequelizeObjectToJson = function (object) {
+    return JSON.parse(JSON.stringify(object));
+}
 
 function addWords(wordArray, tf) {
     wordArray.forEach(w => {

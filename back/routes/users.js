@@ -8,7 +8,7 @@ module.exports = (db) => {
 
   /* get all users */
   router.get('/', async (req, res, next) => {
-    const auth = req.currentUser || 'test';
+    const auth = req.currentUser;
     if (auth) {
       const users = await db.tables.users.findAll({ raw: true });
       res.status(200).json(users);
@@ -20,13 +20,11 @@ module.exports = (db) => {
 
   /* get a user by id */
   router.get('/:id', (req, res, next) => {
-
     res.status(403).json({ message: 'Not authorized' });
   });
 
   /* create user */
   router.post('/', (req, res, next) => {
-
     res.status(403).json({ message: 'Not authorized' });
   });
 

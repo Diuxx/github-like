@@ -3,12 +3,12 @@
 $white: #fff;
 $black: #000;
 
-$grey-400: #36393F; // background
-$grey-500: #2F3136; // background-card
-$grey-700: #202225; // dark
-$grey-300: #313339; // input background
-$grey-600: #222428; // border input
-$grey-800: #040405; // hover input
+$grey-300: #313339;
+$grey-500: #2F3136;
+$grey-400: #36393F; // app background
+$grey-600: #222428;
+$grey-700: #202225;
+$grey-800: #040405;
 
 $grey: #8E9297; // p
 $grey-white: #F2F2F2; // h
@@ -19,6 +19,7 @@ $green-dark: #45B39D;
 
 $red: #EC7063;
 $red-light: #F8C9C4;
+$red-dark: #CB4335;
 
 $yellow: #F7DC6F;
 
@@ -28,3 +29,10 @@ $blue: #85C1E9;
 $blue-light: #D1E8F7;
 $blue-dark: #3498DB;
 /* #endregion General */
+
+/* #region elements */
+$background-color: $grey-400;
+$text-color: $grey;
+$text-hover-color: $white;
+$link-color: $grey;
+/* #endregion elements*/

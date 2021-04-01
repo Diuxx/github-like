@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/Auth.service';
-import { FormComponent } from '../../_templates/form/form.component';
+import { FormComponent } from 'src/app/_templates/form/form.component';
 
 @Component({
   selector: 'app-sign-up',

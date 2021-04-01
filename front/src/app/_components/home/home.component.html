@@ -1,4 +1,9 @@
 <div id="app">
     <!-- app content -->
-    <app-snippet-list [snippets]="snippets"></app-snippet-list>
+    <app-snippet-list [snippets]="snippets" (onFileSelected)="displayFileDetail($event)"></app-snippet-list>
+    <app-snippet-detail 
+        *ngIf="!this.loading"
+        [file]="fileToDisplay"
+        (onSnippetDetected)="selectSnippet($event)">
+    </app-snippet-detail>
 </div>

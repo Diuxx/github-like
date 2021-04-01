@@ -1,9 +1,9 @@
-@import '../../../assets/app-theme.scss';
+@import 'app-theme.scss';
 
 $snippet-list-max-width: 330px;
 
 :host {
-    width: $snippet-list-max-width;
+    flex: 1 $snippet-list-max-width auto;
     background-color: $snippet-list-background-color;
 }
 
@@ -32,4 +32,8 @@ $snippet-list-max-width: 330px;
 
 .snippet {
     display: flex;
+}
+
+.snippet:focus {
+    background-color: $snippet-info-background-hover-color;
 }

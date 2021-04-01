@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AbstractControl, FormBuilder, FormControl, ValidationErrors, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/Auth.service';
-import { FormComponent } from '../../_templates/form/form.component';
+import { FormComponent } from '../../../_templates/form/form.component';
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -36,9 +35,6 @@ export class SignInComponent extends FormComponent implements OnInit {
   }
 
   ngOnInit() {
-    let url = this.route.snapshot;
-    console.log('url', url);
-
   }
 
   public getPassword(): AbstractControl | null {
@@ -68,5 +64,4 @@ export class SignInComponent extends FormComponent implements OnInit {
       this.displaySignUpEvent.emit();
     }
   }
-
 }

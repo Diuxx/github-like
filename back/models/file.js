@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'SnippetId'
         });
         models.files.belongsTo(models.languages, {
-            foreignKey: 'LanguageId'
+            foreignKey: 'LanguageId', as: 'Language'
         });
     };
 

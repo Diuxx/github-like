@@ -1,0 +1,24 @@
+@import 'color-config.scss';
+
+$checkbox-background-color: $grey-700;
+$checkbox-border-color: $grey-800;
+$checkbox-color: $grey;
+
+::ng-deep .p-checkbox .p-checkbox-box
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+    background-color: $checkbox-background-color;
+    border-color: $checkbox-border-color;
+    color: $checkbox-color;
+}
+
+::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box,
+::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight,
+::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
+::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover,
+::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover,
+::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus:hover {
+    box-shadow: none;
+    border-color: $checkbox-border-color;
+    background: $checkbox-background-color;
+    color: $checkbox-color;
+}

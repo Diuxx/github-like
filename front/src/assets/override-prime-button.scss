@@ -1,0 +1,35 @@
+@import 'color-config.scss';
+
+// validate button
+$button-ok-color: $green-dark;
+$button-hover-ok-color: $green;
+
+// cancel button
+$button-cancel-color: $red;
+$button-hover-cancel-color: $red-dark;
+
+.button-cancel,
+.button-cancel:enabled:active {
+    background-color: $button-cancel-color;
+    width: 100px;
+    border: none;
+    &:hover:not(:disabled) {
+        background-color: $button-hover-cancel-color;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.button-ok,
+.button-ok:enabled:active {
+    background-color: $button-ok-color;
+    width: 100px;
+    border: none;
+    &:hover:not(:disabled) {
+        background-color: $button-hover-ok-color;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,38 @@
+<div 
+  class="snippet-content" [ngClass]="{'selected': this.snippet.selected }"
+  (focus)="selectSnippet($event)"
+  tabindex="{{ index }}">
+  <!-- content -->
+  <h2 class="title">{{ snippet?.Title }}</h2>
+  <div class="description">
+    {{ snippet?.Desc }}
+  </div>
+  <div class="footer">
+    <div class="languages">
+      <ng-container *ngFor="let language of distinctLanguages(snippet?.Files)">
+        <i class="{{ language?.Icon }}" [style.color]="language?.Color"></i>
+      </ng-container>
+    </div>
+    <div class="creator">
+      @{{ snippet?.User?.Name }}
+    </div>
+  </div>
+  <div class="files">
+    <div class="file-options">
+      <div class="left">
+        <a class="fas fa-comments comment-button" [ngClass]="{'selected': !selectedFile }" (click)="selectComments()" pTooltip="Comments"></a>
+      </div>
+      <div class="right">
+        <a class="fas fa-folder-plus" pTooltip="Add new folder"></a>
+        <a class="fas fa-plus" pTooltip="Add new file"></a>
+      </div>
+    </div>
+    <p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="nodeSelect($event)">
+      <!--
+      <ng-template let-node pTemplate="default">
+        <input [(ngModel)]="node.label" type="text" style="width:100%">
+      </ng-template>
+      -->
+    </p-tree>
+  </div>
+</div>

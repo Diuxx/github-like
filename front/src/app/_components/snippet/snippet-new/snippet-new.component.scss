@@ -1,0 +1,21 @@
+@import 'app-theme.scss';
+
+:host ::ng-deep .form-content {
+    width: 450px;
+    max-width: 500px;
+}
+
+.desc-textarea {
+    height: 150px;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0;
+    * > {
+        width: 50px;
+    }
+}

@@ -6,6 +6,9 @@ var app = express();
 
 var path = require('path');
 global.appRoot = path.resolve(__dirname);
+global.snippetsRoot = `${path.resolve(__dirname)}\\public\\snippets`;
+
+console.log(`${snippetsRoot}`);
 
 // socket io
 const io = require('./io')(app);

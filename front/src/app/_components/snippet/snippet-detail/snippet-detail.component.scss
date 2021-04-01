@@ -1,0 +1,8 @@
+@import 'color-config.scss';
+
+$snippet-detail-background-color: $grey-700;
+
+:host {
+    flex: 2;
+    background-color: $snippet-detail-background-color;   
+}

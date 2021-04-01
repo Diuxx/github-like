@@ -25,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Snippet.associate = (models) => {
-        models.snippets.belongsTo(models.users, { onDelete: 'CASCADE', foreignKey: 'UserId' });
-        models.snippets.hasMany(models.files, { foreignKey: 'SnippetId' });
+        models.snippets.belongsTo(models.users, { onDelete: 'CASCADE', foreignKey: 'UserId', as: 'User' });
+        models.snippets.hasMany(models.files, { foreignKey: 'SnippetId', as: 'Files' });
     };
 
     return Snippet;

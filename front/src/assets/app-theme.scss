@@ -2,88 +2,60 @@
 @import './size-config.scss';
 @import './font-config.scss';
 
-$background-color: $grey-400;
+// override prime component css
+@import './override-prime-input.scss';
+@import './override-prime-button.scss';
+@import './override-prime-tree.scss';
 
-$text-color: $grey;
-$text-hover-color: $white;
-
-$link-color: $grey;
-
-$input-background-color: $grey-700;
-$input-color: $grey;
-$input-border-color: $grey-800;
-
-$checkbox-background-color: $grey-700;
-$checkbox-color: $grey;
-$checkbox-border-color: $grey-800;
-
+// colors variables
 $form-background-color: $grey-400;
-$form-label-color: $grey;
 $form-text-color: $text-color;
+$form-label-color: $grey;
 
-$snippet-list-background-color: $grey-700;
 $snippet-list-scroll-background-color: $grey-500;
 $snippet-list-hover-scroll-background-color: $grey-400;
+$snippet-list-background-color: $grey-700;
 
-$snippet-info-background-color: $grey-500;
 $snippet-info-background-hover-color: $grey-400;
 $snippet-desc-background-color: $grey-700;
+$snippet-info-background-color: $grey-500;
 
 $add-snippet-link-color: $green;
 $add-snippet-link-hover-color: $green-light;
 
-/* #region input */
-input {
-    background-color: $input-background-color;
-    border-color: $input-border-color;
-    color: $input-color;
-    &:enabled:focus {
-        box-shadow: none;
-        border-color: $input-border-color;
+body {
+    font-family: Roboto, 'Open Sans', Arial, sans-serif;
+    margin: 0px;
+    font-size: 12px !important;
+    background-color: $background-color;
+    color: $text-color;
+    height: 100vh; // need mobile adaptation
+    overflow-y: hidden; // need mobile adaptation
+}
+
+.logo {
+    font-family: Cubicode;
+    font-size: 24px !important;
+    color: $text-color;
+    user-select: none;
+    cursor: auto;
+    span {
+        color: $red;
     }
-    &:enabled:hover {
-        border-color: $input-border-color;
-    }
 }
 
-/* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    border-color: $input-border-color;
-    -webkit-text-fill-color: $input-color;
-    -webkit-box-shadow: 0 0 0px 1000px $input-background-color inset;
-    box-shadow: 0 0 0px 1000px $input-background-color inset;
-    transition: background-color 5000s ease-in-out 0s;
-}
-/* #endregion input */
-
-/* #region checkbox */
-::ng-deep .p-checkbox .p-checkbox-box
-::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
-    background-color: $checkbox-background-color;
-    border-color: $checkbox-border-color;
-    color: $checkbox-color;
+.p-grid {
+    margin: 0 !important;
 }
 
-::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box,
-::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight,
-::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
-::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover,
-::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover,
-::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus:hover {
-    box-shadow: none;
-    border-color: $checkbox-border-color;
-    background: $checkbox-background-color;
-    color: $checkbox-color;
+.flex {
+    display: flex;
 }
-/* #endregion checkbox */
+
+.p-field {
+    display: flex;
+    flex-direction: column;
+}
 
 a {
     border-bottom: 1px $link-color dotted;
@@ -94,12 +66,21 @@ a:hover {
     border-bottom: 1px $link-color solid;
 }
 
+.p-field > label {
+    color: $form-label-color;
+}
+
+textarea {
+    resize: none;
+}
+
 ::ng-deep .p-dialog .p-dialog-content {
     background-color: $form-background-color;
     color: $form-text-color;
     padding: 1rem 1.7rem;
 }
 
-.p-field > label {
-    color: $form-label-color;
+:host .p-inputtext:enabled:focus {
+    border-color:#ced4da !important; //to avoid border color change
+    box-shadow: none !important;
 }

@@ -1,4 +1,4 @@
-@import '../../../assets/app-theme.scss';
+@import 'app-theme.scss';
 
 :host {
     display: flex;
@@ -13,6 +13,53 @@
 
 :host:hover {
     background-color: $snippet-info-background-hover-color;
+}
+
+.files {
+    height: 0px;
+    transition: height 0.15s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: $snippet-desc-background-color;
+    font-size: 0.7em;
+}
+
+.files .file-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+    a {
+        padding: 5px;
+        font-size: 1.4em;
+        border-radius: 20px;
+        border: none;
+    }
+    a:hover {
+        background-color: $grey-300;
+    }
+    .left, .right {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.comment-button.selected {
+    background-color: $grey-300;
+}
+
+.snippet-content.selected { 
+    .files {
+        height: fit-content;
+        transition: height 0.20s ease;
+        width: 100%;
+        padding: 5px 5px;
+        margin: 5px 0px 5px 0px;
+    }
+}
+
+.snippet-content:focus {
+    outline: none;
 }
 
 .title {

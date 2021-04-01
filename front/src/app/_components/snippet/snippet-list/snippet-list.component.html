@@ -1,0 +1,12 @@
+<p-scrollPanel class="content">
+  <!-- snippet list -->
+  <div class="snippet" *ngFor="let snippet of snippets; let i = index">
+    <app-snippet
+      (onSelected)="selectSnippet($event)"
+      (onFileSelected)="displayFileDetail($event)"
+      [snippet]="snippet"
+      [index]="i"
+      [selectedFile]="">
+    </app-snippet>
+  </div>
+</p-scrollPanel>

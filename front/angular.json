@@ -26,6 +26,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies": [
+              "highlight.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -33,6 +36,7 @@
             "styles": [
               "src/styles.scss",
               "src/assets/fontawesome-free-5.15.2-web/css/all.css",
+              "./node_modules/highlight.js/styles/hopscotch.css",
               "./node_modules/primeflex/primeflex.css",
               "./node_modules/primeng/resources/themes/saga-blue/theme.css",
               "./node_modules/primeng/resources/primeng.min.css",
@@ -41,8 +45,14 @@
               "./node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/quill/dist/quill.js"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets"
+              ]
+            }
           },
           "configurations": {
             "production": {

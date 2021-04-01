@@ -1,0 +1,15 @@
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative; /* Sit on top of the page content */
+    background-color: rgba(0,0,0,0.1);
+    z-index: 2; 
+}
+
+:host ::ng-deep .p-progress-spinner-svg {
+    bottom: 50px;
+}

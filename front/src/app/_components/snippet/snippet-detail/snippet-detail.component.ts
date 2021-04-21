@@ -42,7 +42,7 @@ export class SnippetDetailComponent implements OnInit {
         if (urlLastParam != 'home') {
           let urlSnippetId: string = this.utils.getUrlSnippetId(this.router.url);
           this.onSnippetDetected.emit(urlSnippetId);
-        }
+        } else this.onSnippetDetected.emit(undefined);
       } 
     });
   }

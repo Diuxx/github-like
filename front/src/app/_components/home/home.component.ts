@@ -26,17 +26,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.snippetService.getAll<Snippet>().subscribe(
-      e   => {
+      e => {
         this.snippets = e;
-        for(let i=0; i<2; i++) {
-          this.snippets.push(new Snippet());
-        }
-        console.log(this.snippets);
         this.loading = false;
       },
       err => {
         console.error(err);
-    });
+      }
+    );
   }
 
   public displayFileDetail(file: File): void {
@@ -53,11 +50,16 @@ export class HomeComponent implements OnInit {
    * expand selected snippet and reduce others
    * @param id snippet ID */
   public selectSnippet(id: string) {
-    let snippet: Snippet = this.snippets.find(s => s.Id === id);
-    console.log('selected snippet:', snippet);
-    if (snippet) {
+    if (id == undefined)
+    {
       this.reduceSnippets();
-      snippet.selected = true;
+    } else {
+      let snippet: Snippet = this.snippets.find(s => s.Id === id);
+      console.log('selected snippet:', snippet);
+      if (snippet) {
+        this.reduceSnippets();
+        snippet.selected = true;
+      }
     }
   }
 

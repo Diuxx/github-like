@@ -2,6 +2,7 @@
   class="snippet-content" [ngClass]="{'selected': this.snippet.selected }"
   (focus)="selectSnippet($event)"
   tabindex="{{ index }}">
+  
   <!-- content -->
   <h2 class="title">{{ snippet?.Title }}</h2>
   <div class="description">

@@ -1,0 +1,25 @@
+@import 'color-config.scss';
+
+:host {
+    display: block;
+    width: 100%;
+    .title {
+        margin: 20px 0 20px 50px;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        .desc, .version, .dev {
+            background: $grey-500;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .version, .dev {
+            width: 80%;
+        }
+    }
+}

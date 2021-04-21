@@ -109,10 +109,7 @@ export class HeaderComponent implements OnInit {
 
   public snippetCreated(s: Snippet) {
     console.log(s);
-    if (this.onSnippetCreated.observers.length > 0)
-    {
-      this.onSnippetCreated.emit(s);
-    }
+    if (this.onSnippetCreated.observers.length > 0) this.onSnippetCreated.emit(s);
   }
 
   public navigateHome() {

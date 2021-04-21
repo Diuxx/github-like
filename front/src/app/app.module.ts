@@ -63,6 +63,7 @@ import { Utils } from './shared/services/utils.service';
 
 // pipe
 import { SafeHtmlPipe } from './_pipes/safe-html.pipe';
+import { HomeDashboardComponent } from './_components/home/home-dashboard/home-dashboard.component';
 
 // 2. Add your credentials from step 1
 const config = {
@@ -79,6 +80,7 @@ const config = {
     SafeHtmlPipe,
     AppComponent,
     HomeComponent,
+    HomeDashboardComponent,
     HeaderComponent,
     SignInComponent,
     SignUpComponent,

@@ -7,7 +7,20 @@ import { AfterContentInit, AfterViewInit, Component, Input, OnInit } from '@angu
 })
 export class FileEditComponent implements OnInit, AfterContentInit {
 
-  @Input() data: string;
+  private _data : string;
+
+  @Input()
+  public set data(v : string) {
+    this._data = v;
+    $('body').on('DOMSubtreeModified', '#editor', function(){
+      console.log('changed');
+      
+    });
+  }
+  public get data() : string {
+    return this._data;
+  }
+  
 
   constructor() { }
 
@@ -15,9 +28,7 @@ export class FileEditComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    $('body').on('DOMSubtreeModified', '#editor', function(){
-      console.log('changed');
-    });
+
   }
 
   public test(evt: any): void {

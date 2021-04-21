@@ -4,7 +4,13 @@
   tabindex="{{ index }}">
   
   <!-- content -->
-  <h2 class="title">{{ snippet?.Title }}</h2>
+  <div class="snippet-title">
+    <h2 class="title">{{ snippet?.Title }}</h2>
+    <div *ngIf="canDelete()">
+      <a class="fas fa-trash-alt" (click)="deleteSnippet()" pTooltop="Delete snippet"></a>
+    </div>    
+  </div>
+  
   <div class="description">
     {{ snippet?.Desc }}
   </div>

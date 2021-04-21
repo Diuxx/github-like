@@ -32,7 +32,10 @@ module.exports = (db) => {
           },
           attributes: { exclude: ['createdAt', 'updatedAt'] }
         }],
-        attributes: { exclude: ['createdAt', 'updatedAt'] }
+        attributes: { exclude: ['updatedAt'] },
+        order: [
+          ['createdAt', 'DESC']
+        ]
       });
       
       res.status(200).json(snippetList);
@@ -123,10 +126,47 @@ module.exports = (db) => {
     }
   });
 
+  router.delete('/:id', async (req, res, next) => {
+    const auth = req.currentUser;
+    const snippetId = req.params.id;
+    if (auth) {
+      const snippet = await db.tables.snippets.findOne({ where: { Id: snippetId }});
+      console.log(snippet);
+      if (snippet) {
+        const snippetPath = `${snippetsRoot}\\${snippet.Id}`;  
+        console.log('path: ' + snippetPath);
+        if (fs.existsSync(snippetPath)) {
+          try {
+            rmdirSync(path.resolve(snippetPath));
+            snippet.destroy(); // remove the snippet from database
+            res.status(200).json(snippet);
+          } catch (err) {
+            console.log(err);
+            res.status(500).json({ message: 'Server error: cannot delete the file' });     
+          }
+        } else {
+          res.status(500).json({ message: 'Server error: path doesnt exist' });          
+        }
+      } else {
+        res.status(404).json({ message: 'Not found' });
+      }
+    } else {
+      res.status(403).json({ message: 'Not authorized' });
+    }
+  });
+
   // utils functions
   const mkdirSync = function (dirPath) {
     try {
       fs.mkdirSync(dirPath)
+    } catch (err) {
+      if (err.code !== "EEXIST") throw err
+    }
+  }
+
+  const rmdirSync = function (dirPath) {
+    try {
+      fs.rmdirSync(dirPath, { recursive: true });
     } catch (err) {
       if (err.code !== "EEXIST") throw err
     }

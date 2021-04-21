@@ -4,6 +4,7 @@
     <app-snippet
       (onSelected)="selectSnippet($event)"
       (onFileSelected)="displayFileDetail($event)"
+      (onDelete)="removeSnippet($event)"
       [snippet]="snippet"
       [index]="i"
       [selectedFile]="">

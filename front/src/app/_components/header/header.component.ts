@@ -109,6 +109,9 @@ export class HeaderComponent implements OnInit {
 
   public snippetCreated(s: Snippet) {
     console.log(s);
+
+    window.location.reload();
+
     if (this.onSnippetCreated.observers.length > 0) this.onSnippetCreated.emit(s);
   }
 

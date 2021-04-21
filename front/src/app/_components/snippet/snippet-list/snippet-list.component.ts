@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { File } from 'src/app/_models/file';
 import { Snippet } from 'src/app/_models/snippet';
 
@@ -15,7 +16,9 @@ export class SnippetListComponent {
   // outputs
   @Output() onFileSelected = new EventEmitter<File>();
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   /**
    * Select snippet to display
@@ -33,5 +36,15 @@ export class SnippetListComponent {
    */
   public displayFileDetail(file: File): void {
     this.onFileSelected.emit(file);
+  }
+
+  public removeSnippet(snippet: Snippet): void {
+    let snippetIndex = this.snippets.findIndex(s => s.Id == snippet.Id);
+    this.snippets.splice(snippetIndex, 1);
+
+    console.log(`snippet index ${snippetIndex}`);
+
+    // reload
+    this.router.navigate(['/home']);
   }
 }

@@ -38,6 +38,8 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TreeModule } from 'primeng/tree';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 
 // font awesome modules
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -125,7 +127,8 @@ const config = {
     ScrollPanelModule,
     InputTextareaModule,
     TreeModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ConfirmDialogModule,
   ],
   providers: [
     AppInit,
@@ -136,7 +139,8 @@ const config = {
         fullLibraryLoader: () => import('highlight.js'),
       }
     },
-    Utils
+    Utils,
+    ConfirmationService
   ],
   bootstrap: [ AppComponent ]
 })

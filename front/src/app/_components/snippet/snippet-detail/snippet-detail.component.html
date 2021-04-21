@@ -3,7 +3,7 @@
 <app-load *ngIf="loading"></app-load>
 
 <!-- file edit component -->
-<app-file-edit *ngIf="fileStream" [data]="fileStream"></app-file-edit>
+<app-file-edit *ngIf="fileStream && !isLocatedHome()" [data]="fileStream"></app-file-edit>
 
 <!-- snippet comments -->
 <app-snippet-comments *ngIf="!fileStream && !isLocatedHome()"></app-snippet-comments>

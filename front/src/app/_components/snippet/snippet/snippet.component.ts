@@ -3,8 +3,11 @@ import { Snippet } from 'src/app/_models/snippet';
 import { Router } from '@angular/router';
 import { File } from 'src/app/_models/file';
 import { Language } from 'src/app/_models/language';
-import { TreeNode } from 'primeng/api';
+import { Confirmation, ConfirmationService, TreeNode } from 'primeng/api';
 import { Utils } from 'src/app/shared/services/utils.service';
+import { AuthService } from 'src/app/shared/services/Auth.service';
+import { User } from 'src/app/shared/intefaces/User';
+import { SnippetService } from 'src/app/_services/snippet.service';
 
 @Component({
   selector: 'app-snippet',
@@ -34,11 +37,15 @@ export class SnippetComponent implements OnInit {
   // outputs
   @Output() onSelected = new EventEmitter<Snippet>();
   @Output() onFileSelected = new EventEmitter<File>();
+  @Output() onDelete = new EventEmitter<Snippet>();
 
   constructor(
     private router: Router,
-    private utils: Utils
-  ) { }
+    private utils: Utils,
+    private authService: AuthService,
+    private confirationService: ConfirmationService,
+    private snippetService: SnippetService
+    ) { }
 
   ngOnInit() {
     if (this.snippet.selected) {
@@ -49,6 +56,38 @@ export class SnippetComponent implements OnInit {
         this.selectedFile = fileNode;
       }
     }
+  }
+
+  private deleteSnippetQuery(): void {
+    this.snippetService.delete(this.snippet.Id).subscribe(
+      (s: Snippet) => {
+      console.log('deleted snippet:', s);
+      this.onDelete.emit(this.snippet);
+      this.router.navigate(['/home']);
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  public deleteSnippet(): void {
+    this.confirationService.confirm({
+      message: 'Are you sure that you want to delete this snippet?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        console.log('delete snippet', this.snippet);
+        // query to delete snippet
+        this.deleteSnippetQuery();
+      },
+      reject: () => {
+        console.log('rejected !');
+        this.confirationService.close();
+      }
+    });
+  }
+
+  public canDelete(): boolean {
+    return this.authService.getUserData().uid === this.snippet.User?.GoogleId;
   }
 
   public selectComments(): void {

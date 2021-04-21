@@ -22,6 +22,8 @@ $button-hover-cancel-color: $red-dark;
 }
 
 .button-ok,
+.p-button,
+.p-button:enabled:active,
 .button-ok:enabled:active {
     background-color: $button-ok-color;
     width: 100px;

@@ -1,0 +1,22 @@
+@import 'color-config.scss';
+
+::ng-deep {
+    .p-dialog {
+        .p-dialog-header,
+        .p-dialog-content,
+        .p-dialog-footer {
+            background-color: $grey-400;
+            color: $grey;
+        }
+        .p-dialog-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            button {
+                height: 25px;
+                margin: 0;
+            }
+        }
+    }
+}
+    

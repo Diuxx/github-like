@@ -10,7 +10,7 @@ import { FormComponent } from 'src/app/_templates/form/form.component';
   templateUrl: './snippet-new.component.html',
   styleUrls: ['./snippet-new.component.scss']
 })
-export class SnippetNewComponent extends FormComponent implements OnInit {
+export class SnippetNewComponent extends FormComponent {
 
   @Output() canceled = new EventEmitter<void>();
   @Output() created = new EventEmitter<Snippet>();
@@ -29,9 +29,6 @@ export class SnippetNewComponent extends FormComponent implements OnInit {
         Validators.required
       ])
     });
-  }
-
-  ngOnInit() {
   }
 
   public submit(): void {

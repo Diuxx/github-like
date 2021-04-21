@@ -46,14 +46,12 @@ export class AuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
-
-        this.getFromDbUserInfo(
-          user.uid,
-          { 'userData': JSON.stringify(this.userData) })
-          .subscribe(u => {
+        this.getFromDbUserInfo(user.uid, { 'userData': JSON.stringify(this.userData) }).subscribe(
+          u => {
             let badWayToDoThat: string = JSON.stringify(this.userData);
             let updatedUser: any = JSON.parse(badWayToDoThat);
             updatedUser.displayName = u.displayName;
+            
             localStorage.setItem('user', JSON.stringify(updatedUser));
           }, err => {
             // not db registered user
@@ -83,6 +81,9 @@ export class AuthService {
         let userdata: any = { 'userData': JSON.stringify(result.user) };
         this.userService.getOneWithHeader<User>(userUID, userdata)
         .subscribe(u => {
+
+          console.log('user data =>', u);
+
           this.SetUserData(result.user, u.displayName);
           this.ngZone.run(() => {
             window.location.reload();

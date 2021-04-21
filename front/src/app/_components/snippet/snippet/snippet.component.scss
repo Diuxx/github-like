@@ -9,6 +9,19 @@
     min-height: 98px;
     background-color: $snippet-info-background-color;
     cursor: pointer;
+    .snippet-title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        a {
+            font-size: 11px;
+            color: $red;
+            border: none;
+            &:hover {
+                color: $red-light;
+            }
+        }
+    }
 }
 
 :host:hover {
@@ -91,9 +104,9 @@
     align-self: flex-start;
     display: flex;
     width: 50%;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: bold;
-    color: $red;
+    color: $red-light;
     justify-content: flex-end;
 }
 

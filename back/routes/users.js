@@ -19,8 +19,17 @@ module.exports = (db) => {
   });
 
   /* get a user by id */
-  router.get('/:id', (req, res, next) => {
-    res.status(403).json({ message: 'Not authorized' });
+  router.get('/:id', async (req, res, next) => {
+    let googleId = req.params.id;
+    const user = await db.tables.users.findOne({
+      where: { GoogleId: googleId }
+    });
+    if (user) {
+      // --
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: 'Not found' });
+    }
   });
 
   /* create user */

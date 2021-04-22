@@ -7,7 +7,12 @@
     <!-- right header content -->
     <span class="p-input-icon-left input-search">
       <i class="pi pi-search"></i>
-      <input #search (focus)="searchFocus()" class="input-sm" type="text" pInputText />
+      <input #search 
+        id="search-input"
+        (focus)="searchFocus()"
+        [(ngModel)]="searchString"
+        class="input-sm"
+        type="text" pInputText />
     </span>
   </div>
 

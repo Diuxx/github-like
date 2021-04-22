@@ -27,6 +27,8 @@ export class HeaderComponent implements OnInit {
   public signInDisplayFirstClick : boolean = false;
   public signUpDisplayFirstClick : boolean = false;
 
+  public searchString: string;
+
   public innerWidth: any;
   @HostListener('window:resize', ['$event'])
   public onResize(event) {
@@ -50,6 +52,10 @@ export class HeaderComponent implements OnInit {
       this.signInDisplay = true ;
     }
     this.innerWidth = window.innerWidth;
+  }
+
+  public search(str: string): void {
+    console.log(str);
   }
 
   public searchFocus(): void {

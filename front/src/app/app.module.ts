@@ -39,7 +39,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TreeModule } from 'primeng/tree';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 // font awesome modules
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -129,6 +130,7 @@ const config = {
     TreeModule,
     ProgressSpinnerModule,
     ConfirmDialogModule,
+    ToastModule
   ],
   providers: [
     AppInit,
@@ -140,7 +142,8 @@ const config = {
       }
     },
     Utils,
-    ConfirmationService
+    ConfirmationService,
+    MessageService
   ],
   bootstrap: [ AppComponent ]
 })

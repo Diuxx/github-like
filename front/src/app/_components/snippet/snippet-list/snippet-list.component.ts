@@ -1,7 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+
+// models
 import { File } from 'src/app/_models/file';
 import { Snippet } from 'src/app/_models/snippet';
+
+// lib utils
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-snippet-list',
@@ -11,13 +17,21 @@ import { Snippet } from 'src/app/_models/snippet';
 export class SnippetListComponent {
 
   // inputs
-  @Input() snippets: Snippet[] = [];
-
+  private _snippets: Snippet[] = [];
+  @Input()
+  public set snippets(v : Snippet[]) {
+    this._snippets = v;
+  }
+  public get snippets() : Snippet[] {
+    return this._snippets;
+  }
+    
   // outputs
   @Output() onFileSelected = new EventEmitter<File>();
 
   constructor(
-    private router: Router
+    private router: Router,
+    private messageService: MessageService
   ) { }
 
   /**
@@ -43,8 +57,14 @@ export class SnippetListComponent {
     this.snippets.splice(snippetIndex, 1);
 
     console.log(`snippet index ${snippetIndex}`);
-
+    
     // reload
     this.router.navigate(['/home']);
+     
+    // display message
+    this.messageService.add({ 
+      severity: 'success',
+      detail: `Snippet ${snippet.Title} has been deleted`
+    });
   }
 }

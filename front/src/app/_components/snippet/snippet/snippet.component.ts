@@ -63,7 +63,6 @@ export class SnippetComponent implements OnInit {
       (s: Snippet) => {
       console.log('deleted snippet:', s);
       this.onDelete.emit(this.snippet);
-      this.router.navigate(['/home']);
     }, err => {
       console.log(err);
     });

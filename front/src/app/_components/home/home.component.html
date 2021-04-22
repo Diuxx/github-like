@@ -1,6 +1,6 @@
 <div id="app">
     <!-- app content -->
-    <app-snippet-list [snippets]="snippets" (onFileSelected)="displayFileDetail($event)"></app-snippet-list>
+    <app-snippet-list [snippets]="filteredSnippetList" (onFileSelected)="displayFileDetail($event)"></app-snippet-list>
     <app-snippet-detail 
         *ngIf="!this.loading"
         [file]="fileToDisplay"

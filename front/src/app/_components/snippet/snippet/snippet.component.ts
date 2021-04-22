@@ -93,7 +93,7 @@ export class SnippetComponent implements OnInit {
     });
   }
 
-  public canDelete(): boolean {
+  public hasRightToUpdate(): boolean {
     return this.authService.getUserData()?.uid === this.snippet.User?.GoogleId;
   }
 

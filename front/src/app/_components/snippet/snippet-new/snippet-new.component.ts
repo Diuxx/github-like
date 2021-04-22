@@ -32,7 +32,7 @@ export class SnippetNewComponent extends FormComponent {
   }
 
   public submit(): void {
-    let snippet: Snippet = { Title: this.getName().value, Desc: this.getDesc().value };
+    let snippet: any = { Title: this.getName().value, Desc: this.getDesc().value, UserId: this.authService.getUserData().uid };
     this.snippetService.post<Snippet>(snippet)
     .subscribe(s => {
       console.log(s);

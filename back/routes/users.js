@@ -1,6 +1,9 @@
 'use strict';
 
 const express = require('express');
+const { nanoid } = require('nanoid');
+
+const utils = require(`../utils/utils`);
 const router = express.Router();
 
 
@@ -33,8 +36,28 @@ module.exports = (db) => {
   });
 
   /* create user */
-  router.post('/', (req, res, next) => {
-    res.status(403).json({ message: 'Not authorized' });
+  router.post('/', async (req, res, next) => {
+    let googleId = req.body.uid;
+    let userName = req.body.displayName;
+
+    if (utils.isNullOrEmpty(googleId) || utils.isNullOrEmpty(userName)) {
+      res.status(400).json({ message: 'Bad Request' });
+      return;
+    }
+
+    const id = nanoid();
+    const user = await db.tables.users.create({
+      Id: id,
+      GoogleId: googleId,
+      Name: userName
+    });
+
+    console.log(user);
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(403).json({ message: 'Not authorized' });
+    }
   });
 
   return router;

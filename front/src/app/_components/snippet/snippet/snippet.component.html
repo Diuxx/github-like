@@ -6,7 +6,7 @@
   <!-- content -->
   <div class="snippet-title">
     <h2 class="title">{{ snippet?.Title }}</h2>
-    <div *ngIf="canDelete()">
+    <div *ngIf="hasRightToUpdate()">
       <a class="fas fa-trash-alt" (click)="deleteSnippet()" pTooltop="Delete snippet"></a>
     </div>    
   </div>
@@ -29,7 +29,7 @@
       <div class="left">
         <a class="fas fa-comments comment-button" [ngClass]="{'selected': !selectedFile }" (click)="selectComments()" pTooltip="Comments"></a>
       </div>
-      <div class="right">
+      <div class="right" *ngIf="hasRightToUpdate()">
         <a class="fas fa-folder-plus" pTooltip="Add new folder"></a>
         <a class="fas fa-plus" (click)="addNewFile()" pTooltip="Add new file"></a>
       </div>

@@ -85,35 +85,30 @@ module.exports = (db) => {
   router.post('/', async (req, res, next) => {
     const auth = req.currentUser;
     if (auth) {
-      const id = nanoid();
-      const snippetPath = `${snippetsRoot}\\${id}`;
-      const snippetFilesPath = `${snippetsRoot}\\${id}\\files`;
-
-      if (utils.isNullOrEmpty(req.body.Title) || utils.isNullOrEmpty(req.body.Desc))
-      {
+      if (utils.isNullOrEmpty(req.body.Title) || 
+          utils.isNullOrEmpty(req.body.Desc) || 
+          utils.isNullOrEmpty(req.body.UserId)){
         res.status(400).json({ message: 'Bad Request' });
         return;
       }
+      const user = await db.tables.users.findOne({ where: { GoogleId: req.body.UserId }});
 
       // create paths
-      if (!fs.existsSync(snippetPath)) {
+      if (!fs.existsSync(snippetPath) && user) {
+        const id = nanoid();
+        const snippetPath = `${snippetsRoot}\\${id}`;
+        const snippetFilesPath = `${snippetsRoot}\\${id}\\files`;
         try {
           mkdirSync(path.resolve(snippetPath));      // snippets path
           mkdirSync(path.resolve(snippetFilesPath)); // files path
-
           const snippet = await db.tables.snippets.create({ 
             Id: id,
             Title: utils.capitalize(req.body.Title),
             Desc: req.body.Desc,
             Repository: `public/snippets/${id}`,
-            UserId: 'uid-f10b1f96'
+            UserId: user.Id//'uid-f10b1f96'
           });
-
-          if (snippet != null)
-          {
-            utils.calculateTf(snippet.toJSON());
-          }
-
+          if (snippet != null) utils.calculateTf(snippet.toJSON());
           res.status(200).json(snippet.toJSON());
         } catch(err) {
           res.status(500).json({ message: 'Internal Server Error' });

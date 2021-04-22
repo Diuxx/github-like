@@ -9,4 +9,5 @@ export class File {
     public Selected?: boolean = false;
     public SnippetId?: string;
     public LanguageId?: string;
+    public Stream?: string;
 }

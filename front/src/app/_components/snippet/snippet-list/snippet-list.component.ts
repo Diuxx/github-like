@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
@@ -8,6 +8,7 @@ import { Snippet } from 'src/app/_models/snippet';
 
 // lib utils
 import * as _ from 'lodash';
+import { FileService } from 'src/app/_services/file.service';
 
 @Component({
   selector: 'app-snippet-list',
@@ -25,14 +26,53 @@ export class SnippetListComponent {
   public get snippets() : Snippet[] {
     return this._snippets;
   }
+
+  public selectedSnippet: Snippet;
     
   // outputs
   @Output() onFileSelected = new EventEmitter<File>();
 
+  // variables
+  public snippetNewFileDisplay: boolean = false;
+
   constructor(
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private fileService: FileService,
+    private ref: ChangeDetectorRef
   ) { }
+
+  public cancelFileCreation(): void {
+    this.snippetNewFileDisplay = false;
+  }
+
+  public createNewFile(file: any): void {
+    this.fileService.post<File>(file)
+    .subscribe(
+      f => {
+      let createdFile: File = f;
+      createdFile.Language = file.Language;
+      this.selectedSnippet.Files.push(createdFile);
+      this.snippetNewFileDisplay = false;
+
+      // detect changes
+      this.ref.detectChanges();
+
+      // display message
+      this.messageService.add({ 
+        severity: 'success',
+        detail: `${createdFile.FileName} has been created`
+      });
+    }, err => {
+      console.log(err);
+    }) 
+  }
+
+  public displayCreateFileDialog(snippet: Snippet): void {
+    console.log(snippet)
+    this.snippetNewFileDisplay = true;
+    this.selectedSnippet = snippet;
+  }
 
   /**
    * Select snippet to display

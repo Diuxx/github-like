@@ -7,4 +7,6 @@ export class File {
     public Url: string;
     public Language: Language;
     public Selected?: boolean = false;
+    public SnippetId?: string;
+    public LanguageId?: string;
 }

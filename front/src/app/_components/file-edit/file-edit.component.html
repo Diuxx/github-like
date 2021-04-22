@@ -1,13 +1,28 @@
-<pre>
-  <code 
-    id="editor"
-    contenteditable="true"
-    autocomplete="off"
-    autocorrect="off"
-    autocapitalize="off"
-    spellcheck="false"
-    [highlight]="data"
-    [lineNumbers]="true"
-    onchange="test($event)">
-  </code>
-</pre>
+
+
+<div class="edit-content">
+  <h1>{{ file.FileName }} test</h1>
+  <div class="content">
+    <div class="actions">
+
+    </div>
+
+    <!-- file content -->
+    <div class="file">
+      <pre>
+        <code 
+          id="editor"
+          contenteditable="true"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          [highlight]="data"
+          [lineNumbers]="true"
+          onchange="test($event)">
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+

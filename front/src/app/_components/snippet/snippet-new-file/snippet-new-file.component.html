@@ -1,0 +1,23 @@
+<app-form [formGroup]="formCheckout">
+  <div class="p-field fields">
+    <!-- file name field -->
+    <div class="p-field">
+      <label for="name">File name</label>
+      <input id="name" class="input-sm" type="text" formControlName="fileName" aria-describedby="login-help" pInputText />
+      <small *ngIf="getFileName()?.errors?.required && getFileName().touched" class="p-error">File name is required.</small>
+    </div>
+
+    <!-- langage field -->
+    <div class="p-field">
+      <label for="desc">Language</label>
+      <p-dropdown [options]="langages" formControlName="langage" optionLabel="Name" placeholder="Select a language" [showClear]="true" appendTo="body"></p-dropdown>    
+      <small *ngIf="getLangage()?.errors?.required && getLangage().touched" class="p-error">Langage is required.</small>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="p-field submit">
+    <button pButton pRipple type="button" label="Cancel" class="p-button-sm button-cancel" (click)="cancel()"></button>
+    <button pButton pRipple type="button" [disabled]="!canSubmit()" label="Create" class="p-button-sm button-ok" (click)="submit()"></button>
+  </div>
+</app-form>

@@ -5,6 +5,7 @@
       (onSelected)="selectSnippet($event)"
       (onFileSelected)="displayFileDetail($event)"
       (onDelete)="removeSnippet($event)"
+      (onCreateFile)="displayCreateFileDialog($event)"
       [snippet]="snippet"
       [index]="i"
       [selectedFile]="">
@@ -12,3 +13,11 @@
   </div>
   <div *ngIf="snippets.length == 0" class="empty">No snippet found</div>
 </p-scrollPanel>
+
+<p-dialog [showHeader]="false" [showHeader]="false" [(visible)]="snippetNewFileDisplay">
+  <app-snippet-new-file
+    [snippet]="selectedSnippet"
+    (onCanceled)="cancelFileCreation()"
+    (onCreated)="createNewFile($event)"
+  ></app-snippet-new-file>
+</p-dialog>

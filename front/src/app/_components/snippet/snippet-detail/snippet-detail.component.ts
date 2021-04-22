@@ -23,6 +23,7 @@ export class SnippetDetailComponent implements OnInit {
   public loading: boolean = true;
 
   public fileStream: string;
+  @Input() file: File;
 
   public files: any[] = [];
   public currentFileIndex: number;

@@ -38,6 +38,7 @@ export class SnippetComponent implements OnInit {
   @Output() onSelected = new EventEmitter<Snippet>();
   @Output() onFileSelected = new EventEmitter<File>();
   @Output() onDelete = new EventEmitter<Snippet>();
+  @Output() onCreateFile = new EventEmitter<Snippet>();
 
   constructor(
     private router: Router,
@@ -56,6 +57,13 @@ export class SnippetComponent implements OnInit {
         this.selectedFile = fileNode;
       }
     }
+  }
+
+  /**
+   * create new file
+   */
+  public addNewFile(): void {
+    this.onCreateFile.emit(this.snippet);
   }
 
   private deleteSnippetQuery(): void {
@@ -86,7 +94,7 @@ export class SnippetComponent implements OnInit {
   }
 
   public canDelete(): boolean {
-    return this.authService.getUserData().uid === this.snippet.User?.GoogleId;
+    return this.authService.getUserData()?.uid === this.snippet.User?.GoogleId;
   }
 
   public selectComments(): void {

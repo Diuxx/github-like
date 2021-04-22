@@ -1,0 +1,40 @@
+@import 'color-config.scss';
+
+$input-background-color: $grey-700;
+$input-color: $grey;
+$input-border-color: $grey-800;
+
+$hover-dropdown-items-color: $grey-400;
+
+::ng-deep {
+    .p-dropdown,
+    .p-dropdown-items,
+    .p-dropdown-item {
+        background-color: $input-background-color;
+        border-color: $input-border-color;
+        color: $input-color;
+        &:enabled:focus {
+            box-shadow: none;
+            border-color: $input-border-color;
+        }
+        &:enabled:hover {
+            border-color: $input-border-color;
+        }
+    }
+    .p-dropdown-item {
+        &:not(.p-highlight):not(.p-disabled):hover {
+            background-color: $hover-dropdown-items-color;
+        }
+    }
+
+    /* Change Autocomplete styles in Chrome*/
+    .p-dropdown:not(.p-disabled).p-focus,
+    .p-dropdown:not(.p-disabled):hover {
+        border-color: $input-border-color;
+        -webkit-text-fill-color: $input-color;
+        -webkit-box-shadow: 0 0 0px 1000px $input-background-color inset;
+        box-shadow: 0 0 0px 1000px $input-background-color inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+}    
+

@@ -31,7 +31,7 @@
       </div>
       <div class="right">
         <a class="fas fa-folder-plus" pTooltip="Add new folder"></a>
-        <a class="fas fa-plus" pTooltip="Add new file"></a>
+        <a class="fas fa-plus" (click)="addNewFile()" pTooltip="Add new file"></a>
       </div>
     </div>
     <p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="nodeSelect($event)">

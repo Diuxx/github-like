@@ -15,6 +15,8 @@ import { SnippetDetailComponent } from './_components/snippet/snippet-detail/sni
 import { SnippetCommentsComponent } from './_components/snippet/snippet-comments/snippet-comments.component';
 import { LoadComponent } from './_components/load/load.component';
 import { FileEditComponent } from './_components/file-edit/file-edit.component';
+import { HomeDashboardComponent } from './_components/home/home-dashboard/home-dashboard.component';
+import { SnippetNewFileComponent } from './_components/snippet/snippet-new-file/snippet-new-file.component';
 
 // template component
 import { FormComponent } from './_templates/form/form.component';
@@ -40,6 +42,7 @@ import { TreeModule } from 'primeng/tree';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
+import { DropdownModule } from 'primeng/dropdown';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
 // font awesome modules
@@ -66,7 +69,6 @@ import { Utils } from './shared/services/utils.service';
 
 // pipe
 import { SafeHtmlPipe } from './_pipes/safe-html.pipe';
-import { HomeDashboardComponent } from './_components/home/home-dashboard/home-dashboard.component';
 
 // 2. Add your credentials from step 1
 const config = {
@@ -94,7 +96,8 @@ const config = {
     SnippetDetailComponent,
     SnippetCommentsComponent,
     LoadComponent,
-    FileEditComponent
+    FileEditComponent,
+    SnippetNewFileComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +133,8 @@ const config = {
     TreeModule,
     ProgressSpinnerModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    DropdownModule
   ],
   providers: [
     AppInit,

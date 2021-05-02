@@ -59,12 +59,12 @@ module.exports = (db) => {
             const filesPath = `${snippetsRoot}\\${req.body.SnippetId}\\files`;
            
             if (fs.existsSync(filesPath)) {
-                const path = `\\public\\snippets\\${req.body.SnippetId}\\files`
+                const path = `public/snippets/${req.body.SnippetId}/files`
                 const file = await db.tables.files.create({
                     Id: id,
                     Name: req.body.FileName,
                     FileName: req.body.FileName,
-                    Url: `${path}\\${req.body.FileName}.${req.body.Ext}`,
+                    Url: `${path}/${req.body.FileName}.${req.body.Ext}`,
                     SnippetId: req.body.SnippetId,
                     LanguageId: req.body.LanguageId
                 });

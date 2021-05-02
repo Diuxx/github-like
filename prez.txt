@@ -1,0 +1,65 @@
+todo list:
+
+- redirection page home (fermer les snippet ouvert) - ok
+- page home (afficher des info) - ok
+
+- trier les snippet - ok 
+- ajout d'un snippet (update de l'interface) - ok
+- ajout d'un fichier dans la file list (update l'interface) - ok + bug(update filelist)
+
+- filtrer les snippets existant - ok
+
+- changer de module highlight (https://live.prismjs.com/)
+https://www.npmjs.com/package/@ngx-prism/core
+- commentaires
+
+
+
+
+
+
+
+
+
+[Présentation]
+
+<> Snippet: banque de bout de côde. (trouver une solution à un problème: sauvegarder cette solution)
+
+<> langages utilisés: 
+- front: angular
+- back: nodejs
+- bdd: sqlite avec l'orm sequelize
+
+<> ce que j'ai eu le temps de développer
+- authentification (firebase) ~parkage firestore
+- création de snippet
+	- ajout en base
+	- création du dossier lié à l'id en base
+
+- filtre sur les snippets
+
+- suppression d'un snipper
+	- suppression en base
+	- suppression du dossier + fichiers
+
+- création d'un fichier
+
+- mise en place de la lib hightlightjs mais changement pour prism-js 
+(psq plus simple à mettre en place & colloration syntaxique real time)
+
+-------------------- difficultés
+
+1 - pas ou commencer ? après de design fini
+
+
+
+
+--------------------- ce qu'il reste à faire ? 
+
+-2 - corriger quelques bugs
+-1 - changer la lib de coloration syntaxique
+-0.5 - update ses fichiers
+0 - supprimer snippet files
+1 - commentaires
+2 - likes
+3 - responsive

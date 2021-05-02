@@ -93,11 +93,12 @@ module.exports = (db) => {
       }
       const user = await db.tables.users.findOne({ where: { GoogleId: req.body.UserId }});
 
+      const id = nanoid();
+      const snippetPath = `${snippetsRoot}\\${id}`;
+      const snippetFilesPath = `${snippetsRoot}\\${id}\\files`;
+
       // create paths
       if (!fs.existsSync(snippetPath) && user) {
-        const id = nanoid();
-        const snippetPath = `${snippetsRoot}\\${id}`;
-        const snippetFilesPath = `${snippetsRoot}\\${id}\\files`;
         try {
           mkdirSync(path.resolve(snippetPath));      // snippets path
           mkdirSync(path.resolve(snippetFilesPath)); // files path

@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     $("#search-input").on('input', e => {
       let val: string = (<HTMLInputElement>e.target).value;
       this.filteredSnippetList = this.snippets.filter(s => {
-        return s.Title.toLowerCase().includes(val.toLowerCase()) || s.Desc.toLowerCase().includes(val.toLowerCase())
+        return s.Title.toLowerCase().includes(val.toLowerCase()) || s.Desc.toLowerCase().includes(val.toLowerCase()) || s.User?.Name.toLowerCase().includes(val.toLowerCase()) || s.Languages?.some(l => l.Name.toLowerCase().includes(val.toLowerCase()))
       });
 
       // rduce all snippets

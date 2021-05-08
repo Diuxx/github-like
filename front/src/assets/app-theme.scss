@@ -25,14 +25,26 @@ $snippet-info-background-color: $grey-500;
 $add-snippet-link-color: $green;
 $add-snippet-link-hover-color: $green-light;
 
+@media screen and (max-width: 768px) {
+    body {
+        height: fit-content;
+        overflow-y: visible;
+    }
+}
+
+@media screen and (min-width: 768) {
+    body {
+        height: 100vh;
+        overflow-y: hidden;
+    }
+}
+
 body {
     font-family: Roboto, 'Open Sans', Arial, sans-serif;
     margin: 0px;
     font-size: 12px !important;
     background-color: $background-color;
     color: $text-color;
-    height: 100vh; // need mobile adaptation
-    overflow-y: hidden; // need mobile adaptation
 }
 
 .logo {

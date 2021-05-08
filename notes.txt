@@ -1,0 +1,8 @@
+notes: 
+
+galère à mettre en place un responsive intuitif ! du coup les cards sont en bas et le contenu est au dessu.
+ce qui peut être interessant, c'est d'avoir une card home ouverte par defaut.
+et le contenu des snippets + files dans la card directement et non dans en dehors quand on passe en dessous
+de 756 px de largeur.
+
+Je laisse comme ça pour l'instant.

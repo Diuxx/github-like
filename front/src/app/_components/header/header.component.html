@@ -2,6 +2,7 @@
 <div id="header" class="p-grid">
   <!-- header content -->
   <div class="p-grid p-col right">
+    
     <span class="logo" (click)="navigateHome()">SNI<span>PP</span>ET</span>
 
     <!-- right header content -->
@@ -38,7 +39,7 @@
   [(visible)]="signInDisplay"
   (clickOutside)="onClickOutsideSignInDialog($event)"
   [draggable]="false">
-  <app-sign-in (displaySignUpEvent)="showSignUpDialog()" ></app-sign-in>
+  <app-sign-in (displaySignUpEvent)="showSignUpDialog()"></app-sign-in>
 </p-dialog>
 
 <p-dialog 

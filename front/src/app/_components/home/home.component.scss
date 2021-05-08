@@ -1,8 +1,8 @@
 @import '../../../assets/color-config.scss';
 
-#app {
+:host {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     gap: 10px;
     height: 100%;
 }
@@ -13,4 +13,11 @@
     border: 1px solid black;
     width: calc((100% / 5) - 9px);// 330px;
     height: 110px;
+}
+
+@media screen and (max-width: 768px) {
+    :host {
+        flex-direction: column-reverse;
+        gap: unset;
+    }
 }

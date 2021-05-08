@@ -1,4 +1,4 @@
-@import '../../../assets/app-theme.scss';
+@import 'app-theme.scss';
 
 #header {
     min-height: $header-height;
@@ -6,51 +6,45 @@
     box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
     padding-bottom: 1.5px;
     z-index: 10;
-}
-
-@media screen and (max-width: 480px) {
-    #header {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    #header .right {
+    .right {
+        justify-content: flex-start;
         display: flex;
-        width: fit-content;
-        justify-content: center !important;
+        align-items: center;
+        gap: 10px;
+    }
+    .center {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        a {
+            font-size: 1.8em;
+            border: none;  
+        }
+        .add-snippet {
+            color: $add-snippet-link-color;
+            &:hover {
+                color: $add-snippet-link-hover-color;
+            }
+        }
+    }
+    .left {
+        justify-content: flex-end;
+    }    
+}
+
+@media screen and (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: center;
+        .right {
+            width: fit-content;
+            justify-content: center;
+        }
     }
 }
 
-#header .right {
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#header .center {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    a {
-        font-size: 1.8em;
-        border: none;  
-    }
-}
-
-.add-snippet {
-    color: $add-snippet-link-color;
-    &:hover {
-        color: $add-snippet-link-hover-color;
-    }
-}
-
-#header .left {
-    justify-content: flex-end;
-}
-
-.login-buttons, 
-.navigation-buttons {
+.login-buttons, .navigation-buttons {
     display: flex;
     align-items: center;
     justify-content: space-around;

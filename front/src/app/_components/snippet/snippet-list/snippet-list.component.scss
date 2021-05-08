@@ -2,11 +2,28 @@
 
 $snippet-list-max-width: 330px;
 
+@media screen and (max-width: 768px) {
+    :host {
+        max-width: unset;
+        ::ng-deep .content .p-scrollpanel {
+            height: 450px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    :host {
+        max-width: $snippet-list-max-width;
+        min-width: $snippet-list-max-width;
+        ::ng-deep .content .p-scrollpanel {
+            height: calc(100vh - var(--header-height) - 5px);
+        }
+    }
+}
+
 :host {
-    flex: 1 $snippet-list-max-width auto;
+    // flex: 1 $snippet-list-max-width auto;
     background-color: $snippet-list-background-color;
-    max-width: $snippet-list-max-width;
-    min-width: $snippet-list-max-width;
     .empty {
         border-radius: 10px;
         padding: 5px 10px;
@@ -18,7 +35,6 @@ $snippet-list-max-width: 330px;
 }
 
 ::ng-deep .content .p-scrollpanel {
-    height: calc(100vh - var(--header-height) - 5px);
     width: 100%;
 }
 

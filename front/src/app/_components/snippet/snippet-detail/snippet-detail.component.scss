@@ -3,6 +3,7 @@
 $snippet-detail-background-color: $grey-700;
 
 :host {
+    display: block;
     flex: 2;
     background-color: $snippet-detail-background-color;   
 }

@@ -1,8 +1,20 @@
 notes: 
-
-galère à mettre en place un responsive intuitif ! du coup les cards sont en bas et le contenu est au dessu.
+ 
+1) galère à mettre en place un responsive intuitif ! du coup les cards sont en bas et le contenu est au dessu.
 ce qui peut être interessant, c'est d'avoir une card home ouverte par defaut.
 et le contenu des snippets + files dans la card directement et non dans en dehors quand on passe en dessous
 de 756 px de largeur.
 
-Je laisse comme ça pour l'instant.
+2) gestion des erreurs n'est pas géré
+
+3) plutot que d'éditer le snippet directement on pourrait l'upload directement dans un 1er temps.
+(update snippet non fonctionnel)
+
+4) il y a plein de façon de gérer le routing et le partage de données ! je pense que l'application doit être 
+refaite. en suivant les bonnes pratiques de routing. je me suis emmêlé les pinceaux.
+
+5) gestion de style global + perso au composant à revoir
+
+6) gloablement je me suis lancer dans le code sans trop prévoir avant et le squelette de l'app n'est pas ouf.
+
+je ne touche plus à rien

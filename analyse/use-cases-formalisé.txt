@@ -1,0 +1,21 @@
+- En tant qu'inscrit, je souhaite pouvoir me connecter à l'aide de mon compte google
+- En tant qu'utilisateur, je souhaite pouvoir créer un compte sur le site
+- En tant qu'utilisateur, je souhaite voir les snippets des personnes enregistrées sur le site
+- En tant qu'utilisateur, je souhaite pouvoir rechercher un snippet en particulié par nom créateur, date de création ou par langage utilisé
+- En tant qu'utilisateur, je doit pouvoir télécharger un snippet 
+- En tant qu'utilisateur, je doit pouvoir télécharger un fichier présent dans un snippet
+- En tant qu'inscrit, je souahite pouvoir créer un snippet
+- En tant qu'inscrit, je souhaite pouvoir ajouter un titre a mon snippet
+- En tant qu'inscrit, je souhaite pouvoir ajouter une description à mon snippet
+- En tant qu'inscrit, je souhaite pouvoir créer un fichier dans mon snippet
+- En tant qu'inscrit, je souhaite pouvoir selectionner le langage utilisé dans se fichier
+- En tant qu'inscrit, je doit pouvoir editer le fichier que je viens d'ajouter dans mon snippet
+- En tant qu'inscrit, le code que je tape doit avoir un coloration syntaxique
+- En tant qu'inscrit, je doit pouvoir supprimer un fichier que j'aurais ajouté dans mon snippet
+- En tant qu'inscrit, je doit pouvoir sauvegarder un fichier dans mon snippet
+- En tant qu'inscrit, je doit pouvoir sauvegarder mon snippet en entier
+- En tant qu'inscrit, je doit pouvoir commenter mon propre snippet
+- En tant qu'inscrit, je doit pouvoir commenter le snippet des autres inscrit
+- En tant qu'inscrit, je doit pouvoir mettre à jour un snippet que j'ai crée
+- En tant qu'inscrit, je doit pouvoir me déconnecté
+- En tant qu'inscrit, je doit pouvoir me désincrir

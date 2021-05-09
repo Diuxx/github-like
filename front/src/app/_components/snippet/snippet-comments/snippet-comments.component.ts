@@ -78,6 +78,7 @@ export class SnippetCommentsComponent implements OnInit {
     .subscribe(c => {
       console.log(c);
       this.commentForm.get('message').setValue('');
+      this.getComments();
     }, err => {
       console.log(err);
     });
@@ -106,6 +107,8 @@ export class SnippetCommentsComponent implements OnInit {
         if (commentList.length > 0) {
           console.log(commentList);
           this.comments = commentList;
+        } else {
+          this.comments = [];
         }
       }, err => {
         console.log('cannot get comments list of: ' + snippetId);

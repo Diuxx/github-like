@@ -28,10 +28,12 @@ module.exports = (sequelize, DataTypes) => {
         models.comments.belongsTo(models.snippets, {
             // onDelete: 'CASCADE',
             foreignKey: 'SnippetId'
+            , as: 'Snippets' 
         });
         models.comments.belongsTo(models.users, {
             // onDelete: 'CASCADE',
             foreignKey: 'UserId'
+            , as: 'User' 
         });
     }
     return Comment;

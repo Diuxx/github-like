@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { map } from 'jquery';
 
@@ -30,6 +30,8 @@ export class SnippetDetailComponent implements OnInit {
   
   // output
   @Output() onSnippetDetected = new EventEmitter<String>();
+
+  @ViewChild('comments') commetComponentn;
 
   constructor(
     private router: Router,
@@ -103,7 +105,6 @@ export class SnippetDetailComponent implements OnInit {
         this.loading = false;
         break;
       case 'comments':
-        console.log('> snippet comments');
         this.fileStream = undefined;
         this.loading = false;
         break;

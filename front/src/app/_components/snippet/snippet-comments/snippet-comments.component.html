@@ -1,3 +1,29 @@
-<p>
-  snippet-comments works!
-</p>
+<span *ngIf="!hasComments()">No existing comments</span>
+
+<!-- comments list -->
+<div *ngIf="hasComments()" class="comments">
+  <div *ngFor="let comment of comments" class="comment">
+    <div class="comment-info">
+      @{{ getUserName(comment) }}
+    </div>
+    <div class="comment-content">
+      {{ comment.Content }}
+    </div>
+  </div>
+</div>
+
+<!-- comment form -->
+<form [formGroup]="commentForm" class="comment-edit">
+  <span> Add new comment : </span>
+  <div class="comment-box">
+    <textarea formControlName="message" maxlength="1000"></textarea>
+  </div>
+  <div class="buttons">
+    <button pButton type="button" 
+      [disabled]="!canSubmit()"
+      label="Post"
+      class="p-button-sm button-ok"
+      (click)="submit()">
+    </button>
+  </div>
+</form>

@@ -6,7 +6,7 @@
 <app-file-edit *ngIf="fileStream && !isLocatedHome()" [data]="fileStream" [file]="file"></app-file-edit>
 
 <!-- snippet comments -->
-<app-snippet-comments *ngIf="!fileStream && !isLocatedHome()"></app-snippet-comments>
+<app-snippet-comments #comments *ngIf="!fileStream && !isLocatedHome()"></app-snippet-comments>
 
 <div *ngIf="isLocatedHome()">
     <app-home-dashboard></app-home-dashboard>

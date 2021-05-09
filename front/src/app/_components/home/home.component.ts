@@ -48,8 +48,6 @@ export class HomeComponent implements OnInit {
       // navigate home
       this.router.navigate([`/home`]);
     });
-
-    
   }
 
   ngOnInit() {

@@ -33,11 +33,11 @@ Projet final de web full stack
 
 ### Model de donnée
 
-![Snippets model de données](https://github.com/Diuxx/github-like/blob/develop/diagramme.jpg)
+![Snippets model de données](https://github.com/Diuxx/github-like/blob/develop/analyse/diagramme.jpg)
 
 ### Parcours utilisateur
 
-![User journey](https://github.com/Diuxx/github-like/blob/develop/user-journey.png)
+![User journey](https://github.com/Diuxx/github-like/blob/develop/analyse/user-journey.png)
 
 ### Couleurs
 
@@ -54,14 +54,9 @@ Projet final de web full stack
 | button validate | #82E0AA |
 | button delete | #EC7063 |
 
-### Maquettes
+### Figma
 
-![Home](https://github.com/Diuxx/github-like/blob/develop/maquettes/snippet-home-registered.png)  
-
-![Edit](https://github.com/Diuxx/github-like/blob/develop/maquettes/see-snippets.png)  
-    
-les autres maquettes : https://github.com/Diuxx/github-like/tree/develop/maquettes   
-(+) https://www.figma.com/file/cSBrX3EMysekVMo7K8Gjiu/Snippets?node-id=125%3A1  
+https://www.figma.com/file/cSBrX3EMysekVMo7K8Gjiu/Snippets?node-id=125%3A1  
 
 ## Developpé avec
 
